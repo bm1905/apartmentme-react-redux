@@ -1,5 +1,10 @@
 @import 'variables.scss';
 @import 'header/header.scss';
+@import 'search/search.scss';
+@import 'footer/footer.scss';
+@import 'infofooter/infofooter.scss';
+@import 'home/middlehomesection.scss';
+@import 'home/homepage.scss';
 
 @import 'rental/rental-listing.scss';
 @import 'rental/rental-detail.scss';
@@ -8,6 +13,7 @@
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .apartment {

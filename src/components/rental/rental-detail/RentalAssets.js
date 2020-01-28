@@ -8,7 +8,7 @@ export function RentalAssets() {
                 <div className='col-md-6'>
                     <span><i className='fa fa-asterisk'></i> Cooling</span>
                     <span><i className='fa fa-thermometer'></i> Heating</span>
-                    <span><i className='fa fa-location-arrow'></i> Iron</span>
+                    <span><i className='fa fa-fire'></i> Fireplace</span>
                 </div>
                 <div className='col-md-6'>
                     <span><i className='fa fa-desktop'></i> Working area</span>
