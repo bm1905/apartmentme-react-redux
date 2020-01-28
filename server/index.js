@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const config = require('./config/dev');
 const Rental = require('./models/rental');
 const FakeDb = require('./fake-db');
 
-const rentalRoutes = require('./routes/rentals');
+const   rentalRoutes = require('./routes/rentals'),
+        userRoutes = require('./routes/users');
 
 // var url = config.DB_URI || "mongodb://localhost/apartmentme-react-redux";
 var url = config.DB_URI;
@@ -16,7 +18,10 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFind
 
 const app = express();
 
+app.use(bodyParser.json());
+
 app.use('/api/v1/rentals', rentalRoutes);
+app.use('/api/v1/users', userRoutes);
 
 const PORT = process.env.PORT || 3001;
 
