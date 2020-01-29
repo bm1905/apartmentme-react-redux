@@ -13,7 +13,7 @@ var url = config.DB_URI;
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }).then(() => {
     const fakeDb = new FakeDb();
-    fakeDb.seedDb();
+    // fakeDb.seedDb();
 }).catch(err => console.error(err));
 
 const app = express();

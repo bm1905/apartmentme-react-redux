@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import { Search } from '../../../shared/Search';
+import { Search } from '../../../components/shared/Search';
 
 import * as actions from 'actions';
 
