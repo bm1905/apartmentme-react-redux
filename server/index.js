@@ -6,7 +6,8 @@ const Rental = require('./models/rental');
 const FakeDb = require('./fake-db');
 
 const   rentalRoutes = require('./routes/rentals'),
-        userRoutes = require('./routes/users');
+        userRoutes = require('./routes/users'),
+        bookingRoutes = require('./routes/bookings');
 
 // var url = config.DB_URI || "mongodb://localhost/apartmentme-react-redux";
 var url = config.DB_URI;
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 
 app.use('/api/v1/rentals', rentalRoutes);
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/bookings', bookingRoutes);
 
 const PORT = process.env.PORT || 3001;
 
