@@ -5,7 +5,7 @@ export function Footer() {
     return (
         <div>
             <div className='footerWrapper'>
-                <nav className='brandLinks'>
+                {/* <nav className='brandLinks'>
                     <ul className='footerList'>
                         <li>
                             <a href='#'>
@@ -33,7 +33,7 @@ export function Footer() {
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </nav> */}
                 
                 <footer className='footer'>
                     <div className='navSeparator'>
@@ -98,9 +98,9 @@ export function Footer() {
                     <div className="copyrightSection">
                         <div className="col-md-12 text-center">
                             <ul className="social-links">
-                                <li><a href="https://www.facebook.com/bmaharjan.chelsea"><i className='fa fa-facebook'></i></a></li>
-                                <li><a href="https://www.instagram.com/m_reus111"><i className="fa fa-instagram"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/bijay-maharjan-10654b92"><i className="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://www.facebook.com"><i className='fa fa-facebook'></i></a></li>
+                                <li><a href="https://www.instagram.com"><i className="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com"><i className="fa fa-linkedin"></i></a></li>
                                 <li><a href="https://www.twitter.com"><i className="fa fa-twitter"></i></a></li>
                             </ul>
                             <p>&copy; Copyright ApartmentMe Project 2019 </p>
