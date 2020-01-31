@@ -19,7 +19,7 @@ exports.createBooking = function(req, res) {
                 }
 
                 if (foundRental.user.id === user.id) {
-                    return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'Cannot create booking!'}]});
+                    return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'Sorry, cannot book your own property!'}]});
                 }
                 
                 if (isValidBooking(booking, foundRental)) {
@@ -39,7 +39,7 @@ exports.createBooking = function(req, res) {
                     });  
                 }
                 else {
-                    return res.status(422).send({errors: [{title: 'Invalid Booking!', detail: 'Already taken!'}]});
+                    return res.status(422).send({errors: [{title: 'Invalid Booking!', detail: 'Sorry, these dates are not available!'}]});
                 }
             });
 }
