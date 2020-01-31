@@ -4,7 +4,7 @@ button {
 }
 
 .mainContainer {
-    max-width: 1280px;
+    // max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
@@ -20,6 +20,7 @@ button {
 .text {
     text-align: center;
     margin-bottom: 0;
+    color: $main-color;
 }
 
 .homesAvailable,
@@ -27,8 +28,8 @@ button {
 .mostSquareFootage,
 .mostRecent {
     text-align: center;
-    color: #999;
-    font-weight: 400;
+    color: $light-gray-color;
+    font-weight: 500;
     font-size: 15px;
 }
 
@@ -46,15 +47,18 @@ button {
     border: none;
     border-radius: 7px;
     font-size: 15px;
-    color: #fff;
-    background: #0074e4;
+    font-weight: 400;
+    color: $main-white-color;
+    background: $main-color;
 }
 
 .houseList {
     border: 1px solid #ddd;
+    // margin-left: 50px;
+    // margin-right: 50px;
   border-radius: 4px;
   padding: 5px;
-  width: 350px;
+  width: 330px;
 }
 
 houseList:hover {
