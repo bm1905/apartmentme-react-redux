@@ -1,16 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+@author bm1905<br />
 
-## Available Scripts
+This ApartmentMe project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Basic Setup
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install`
 
+This process will setup project dependencies.<br />
+To run the project:</br>
+Inside server, run:
+### `nodemon index.js`
+Inside main project directory, run:
+### `npm start`
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+## Fixes to be made
+<ul>
+    <li>Calendar dates are not marked taken instantly (modal not closed) - BookingModal.js, Booking.js</li>
+</ul>
+
+
+
+## Other functions
 
 ### `npm test`
 

@@ -5,6 +5,7 @@ import { BookingModal } from './BookingModal';
 import { getRangeOfDates } from 'helpers';
 import * as moment from 'moment';
 import * as actions from 'actions';
+import authService from 'services/auth-service';
 
 export class Booking extends React.Component {
 
@@ -153,7 +154,10 @@ export class Booking extends React.Component {
                     aria-describedby='guests' 
                     placeholder=''></input>
         </div>
-        <button disabled={!startAt || !endAt || !guests} onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve place now</button>
+        <button disabled={!startAt || !endAt || !guests || !authService.isAuthenticated() } onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve place now</button>
+        <p className='booking-note-text'>
+        Only registered users are able to reserve.
+        </p>
         <hr></hr>
         <p className='booking-note-title'>People are currently looking at this place</p>
         <p className='booking-note-text'>
