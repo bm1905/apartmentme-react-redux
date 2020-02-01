@@ -5,7 +5,14 @@
     }
 
     #search-size{
-        width: 30%;
+        width: 40%;
+    }
+
+    @media screen and (max-width: 900px) {
+        #search-size{
+            width: 90%;
+        }
+
     }
 
     #basic-text1 {

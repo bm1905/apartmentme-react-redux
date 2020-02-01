@@ -9,11 +9,20 @@ const MiddleHomeSection = (props) => {
       dots: true,
       infinite: false,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
     //   centerMode: true,
-      responsive: [{
-        breakpoint: 1024,
+      responsive: [
+        {
+            breakpoint: 1500,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },{
+        breakpoint: 1100,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 3,
@@ -21,14 +30,14 @@ const MiddleHomeSection = (props) => {
           dots: true
         }
       }, {
-        breakpoint: 750,
+        breakpoint: 800,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 2,
           initialSlide: 2
         }
       }, {
-        breakpoint: 480,
+        breakpoint: 500,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
