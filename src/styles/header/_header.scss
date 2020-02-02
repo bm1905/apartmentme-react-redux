@@ -35,6 +35,16 @@
     .nav-item {
       color: $main-white-color;
     }
+
+    .dropdown-menu {
+      .dopdown-item {
+        font-size: 14px;
+
+        &:active {
+          background-color: $main-color;;
+        }
+      }
+    }
   }
 
   .mainLogo {

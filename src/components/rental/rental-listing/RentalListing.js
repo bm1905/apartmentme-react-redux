@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { RentalList } from './RentalList';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
+// import { BrowserRouter, Route } from 'react-router-dom';
+// import { Provider } from 'react-redux';
 
-import { Search } from '../../../components/shared/Search';
+// import { Search } from '../../../components/shared/Search';
+import RentalSearchInput from '../../../components/rental/RentalSearchInput';
 
 import * as actions from 'actions';
 
@@ -17,7 +18,7 @@ class RentalListing extends React.Component {
     render() {
         return (
             <section id='rentalListing'>
-            <Search />
+            <RentalSearchInput />
                 <h1 className='page-title'>Apartments/Homes within 71115</h1>
                 <RentalList rentals={this.props.rentals} />
             </section>

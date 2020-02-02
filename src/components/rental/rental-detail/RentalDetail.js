@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RentalDetailInfo } from './RentalDetailInfo';
 import { RentalMap } from './RentalMap';
-import { Search } from '../../../components/shared/Search';
+// import { Search } from '../../../components/shared/Search';
 import { Booking } from 'components/booking/Booking';
 
 import * as actions from 'actions';
@@ -21,7 +21,7 @@ class RentalDetail extends React.Component {
         if (rental._id) {
             return (
                 <section id='rentalDetails'>
-                    <Search />
+                    {/* <Search /> */}
                     <div className='upper-section'>
                         <div className='row'>
                         <div className='col-md-6'>
