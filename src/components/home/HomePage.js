@@ -1,9 +1,38 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Slider from 'react-slick';
+import React from 'react';
+// import { withRouter } from 'react-router-dom';
+// import { connect } from 'react-redux';
+// import Slider from 'react-slick';
 import MiddleHomeSection from './MiddleHomeSection';
 
 export class HomePage extends React.Component {
+
+    constructor() {
+        super();
+
+        this.searchInput = React.createRef();
+    }
+
+    
+
+    handleSearch() {
+        const { history } = this.props;
+        const city = this.searchInput.current.value;
+
+        city ? history.push(`/rentals/${city}/homes`) : history.push('/');
+    }
+
+    // handleKeyPress(target) {
+    //     if(target.charCode==13) {
+    //         // alert('Enter clicked!!!');  
+    //         this.handleSearch();
+    //     }
+    // }
+
+    onKeyPress = (e) => {
+        if(e.which === 13) {
+          this.handleSearch();
+        }
+      }
     
 
     render() {
@@ -22,8 +51,13 @@ export class HomePage extends React.Component {
                     </div> */}
 
                 <div className="search-box">
-                    <input type="text" name="" className="search-txt" placeholder="Enter an address, city or ZIP Code..."/>
-                    <a className="search-btn" href="#">
+                    <input ref={this.searchInput}
+                        type="text" 
+                        onKeyPress={this.onKeyPress}
+                        name="" 
+                        className="search-txt" 
+                        placeholder="Enter an address, city or ZIP Code..."/>
+                    <a onClick={() => {this.handleSearch()}} className="search-btn">
                     <i className="fa fa-search" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -38,5 +72,18 @@ export class HomePage extends React.Component {
 }
 
 
+//         <div className='form-inline my-2 my-lg-0'  id="search-size">
+//             <input ref={this.searchInput}
+//                 className='form-control mr-sm-2 bwm-search' 
+//                 type='search' 
+//                 placeholder="Search City" 
+//                 aria-label='Search'></input>
+//             <button onClick={() => {this.handleSearch()}}
+//                 className='btn btn-outline-success my-2 my-sm-0 btn-bwm-search' 
+//                 type='submit'>Search</button>
+//         </div> 
+//         )
+//     }
+// }
 
-// export default connect(HomePage)
+// export default withRouter(RentalSearchInput)

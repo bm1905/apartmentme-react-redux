@@ -53,7 +53,7 @@ router.get('', function(req, res) {
                 return res.status(422).send({errors: normalizeErrors(err.errors)});
             }
             if (city && foundRentals.length === 0) {
-                return res.status(422).send({errors: [{title: 'Sorry, nothing found!', detail: `There are no listings for city ${city}`}]});
+                return res.status(422).send({errors: [{title: 'Sorry, nothing found!', detail: `Sorry! No current listings for ${city}.`}]});
             }
             return res.json(foundRentals);
         });
