@@ -79,12 +79,6 @@ export const createRental= (rentalData) => {
 
 
 
-export const register = (userData) => {
-  return axios.post('/api/v1/users/register', userData).then(
-    res => res.data,
-    err => Promise.reject(err.response.data.errors));
-}
-
 // AUTH ACTIONS
 
 const loginSuccess = () => {
@@ -101,6 +95,14 @@ const loginFailure = (errors) => {
     type: LOGIN_FAILURE,
     errors
   }
+}
+
+
+
+export const register = (userData) => {
+  return axios.post('/api/v1/users/register', userData).then(
+    res => res.data,
+    err => Promise.reject(err.response.data.errors));
 }
 
 export const checkAuthState = () => {

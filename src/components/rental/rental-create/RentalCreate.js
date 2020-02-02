@@ -20,7 +20,7 @@ export class RentalCreate extends React.Component {
 
     createRental(rentalData) {
         actions.createRental(rentalData).then(
-            (rentals) => this.setState({redirect: true}),
+            (rental) => this.setState({redirect: true}),
             (errors) => this.setState({errors})
         )
     }
