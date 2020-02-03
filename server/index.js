@@ -12,7 +12,11 @@ const   rentalRoutes = require('./routes/rentals'),
 // var url = config.DB_URI || "mongodb://localhost/apartmentme-react-redux";
 var url = config.DB_URI;
 
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }).then(() => {
+mongoose.connect(url, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    useFindAndModify: false, 
+    useCreateIndex: true }).then(() => {
     const fakeDb = new FakeDb();
     // fakeDb.seedDb();
 }).catch(err => console.error(err));
