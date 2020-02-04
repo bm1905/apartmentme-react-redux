@@ -1,0 +1,57 @@
+// body, html {
+//     height: 100%;
+//     margin: 0;
+//     }
+
+// .bg-image {
+//     background-image: url(https://www.tokkoro.com/picsup/2990379-computer-laptop-coffee-programming-web-development-code-languages-keyboards-computer-screen-macbook___mixed-wallpapers.jpg);
+//     /* Add the blur effect */
+//     filter: blur(8px);
+//     -webkit-filter: blur(4px);
+//     opacity:0.7;
+//     /* Full height */
+//     height: 100%;
+//     /* Center and scale the image nicely */
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     }
+
+    /* Adding text at the top of background. */
+    .bgimg {
+    color: #461D7C;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
+    font-size: 2em;
+    }
+
+    /* Assigning positions for several contents of the page. */
+    // .topleft {
+    // position: absolute;
+    // top: 0;
+    // left: 16px;
+    // }
+
+    .bottom {
+    // position: absolute;
+    // bottom: 0;
+    // top: 80%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    text-align: center;
+    /*left: 16px;*/
+    }
+
+    .middle {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    text-align: center;
+    }
+
+    /* Defining the horizontal line. */
+    // hr {
+    // margin: auto;
+    // width: 40%;
+    // }
