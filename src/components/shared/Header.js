@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import MainLogo from '../../styles/images/apartmentme-logo.png';
+// import MainLogo from '../../styles/images/apartmentme-logo.png';
 // import RentalSearchInput from 'components/rental/RentalSearchInput';
 
 class Header extends React.Component {
@@ -14,7 +14,7 @@ class Header extends React.Component {
 
     handleLogout() {
         this.props.logout();
-        this.props.history.push('/rentals');
+        this.props.history.push('/');
     }
 
     renderAuthButtons(isAuth) {
@@ -40,8 +40,8 @@ class Header extends React.Component {
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <Link className="dropdown-item" to="/rentals/new">Create Rental</Link>
-                        <Link className="dropdown-item" to="#">Manage Rentals</Link>
-                        <Link className="dropdown-item" to="#">Manage Bookings</Link>
+                        <Link className="dropdown-item" to="/rentals/manage">Manage Rentals</Link>
+                        <Link className="dropdown-item" to="/bookings/manage">Manage Bookings</Link>
                     </div>
                 </div>
             )
@@ -54,8 +54,10 @@ class Header extends React.Component {
             <header className='mainHeader'>
                 <nav className='navbar navbar-dark navbar-expand-lg'>
                     <div className='container'>
-                    <img src={ MainLogo } className='mainLogo' alt='' />
+                    <img src={ process.env.PUBLIC_URL + '/img/apartmentme-logo.png' } className='mainLogo' alt='' />
+                    {/* <img className='displayImg' src={process.env.PUBLIC_URL + '/img/apartmentme-logo.png'} alt=""/> */}
                         <Link className='navbar-brand' to='/'>ApartmentMe</Link>
+                        
                         {/* <RentalSearchInput /> */}
                         {/* <form className='form-inline my-2 my-lg-0'>
                             <input className='form-control mr-sm-2 bwm-search' type='search' placeholder="Search City" aria-label='Search'></input>
