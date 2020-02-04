@@ -1,6 +1,10 @@
 {
   "name": "apartmentme-react-redux",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.14.0",
+    "npm": "6.13.4"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -41,9 +45,11 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
+    "heroku-postbuild": "npm run build",
     "build-css": "node-sass-chokidar ./src -o ./src",
     "watch-css": "npm run build-css && node-sass-chokidar ./src -o ./src --watch --recursive",
-    "start-js": "react-scripts start",
+    "start-js": "npm start --prefix server",
+    "start-dev": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
