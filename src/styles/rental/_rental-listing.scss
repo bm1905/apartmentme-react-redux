@@ -41,3 +41,42 @@
     }
   }
   
+  @media screen and (min-width: 900px) {
+    .wideView {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      padding: 10px 50px;
+      margin-bottom: 100px;
+    }
+    .homesFlow {
+      // background-color:red;
+      overflow: auto;
+      height: 100vh;
+      margin: 10px 0;
+      // padding: 100px;
+    }
+  
+    .mapsFlow {
+      height: 100vh;
+      margin: 10px 0;
+      // background-color:lightgray;
+    }
+
+  }
+
+
+
+  @media screen and (max-width: 900px) {
+    // .wideView {
+    //   height: 110vh;
+    // }
+    .mapsFlow {
+      display: none;
+    }
+  }
+

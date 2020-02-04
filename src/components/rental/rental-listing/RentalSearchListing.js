@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { RentalList } from './RentalList';
+import { RentalMapMain } from './RentalMapMain';
 import { connect } from 'react-redux';
 // import { BrowserRouter, Route } from 'react-router-dom';
 // import { Provider } from 'react-redux';
@@ -54,12 +55,33 @@ class RentalSearchListing extends React.Component {
         return <h1 className='page-title'>{title}</h1>
     }
 
+    // render() {
+    //     return (
+    //         <section id='rentalListing'>
+    //         <RentalSearchInput />
+    //             {this.renderTitle()}
+    //             <RentalList rentals={this.props.rentals.data} />
+    //         </section>
+    //     )
+    // }
     render() {
+        const rental = this.props.rentals;
         return (
-            <section id='rentalListing'>
-            <RentalSearchInput />
-                {this.renderTitle()}
-                <RentalList rentals={this.props.rentals.data} />
+            <section id='rentalListing' className='wideView'>
+                <RentalSearchInput />
+
+                <div className='mixedView'>
+                    <div className='row'>
+                    <div className='col-md-6 homesFlow'>
+                        {this.renderTitle()}
+                        <RentalList rentals={this.props.rentals.data} />
+                    </div>
+                    <div className='col-md-6 mapsFlow'>
+                        {/* <h1>Maps here</h1> */}
+                        <RentalMapMain location={`${rental.city}, ${rental.street}`}/>
+                    </div>
+                    </div>
+                </div>
             </section>
         )
     }
@@ -72,3 +94,4 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(RentalSearchListing)
+
