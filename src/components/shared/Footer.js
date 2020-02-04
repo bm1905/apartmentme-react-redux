@@ -40,37 +40,37 @@ export function Footer() {
                         <nav className='links'>
                             <ul className='footerLinks'>
                                 <li>
-                                    <a href='!#'>About</a>
+                                    <a href='/comingsoon'>About</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Research</a>
+                                    <a href='/comingsoon'>Research</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Careers</a>
+                                    <a href='/comingsoon'>Careers</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Help</a>
+                                    <a href='/comingsoon'>Help</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Advertise</a>
+                                    <a href='/comingsoon'>Advertise</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Terms of use and Privacy</a>
+                                    <a href='/comingsoon'>Terms of use and Privacy</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Ad Choice</a>
+                                    <a href='/comingsoon'>Ad Choice</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Cookie Preferences</a>
+                                    <a href='/comingsoon'>Cookie Preferences</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Blog</a>
+                                    <a href='/comingsoon'>Blog</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Data Science</a>
+                                    <a href='/comingsoon'>Data Science</a>
                                 </li>
                                 <li>
-                                    <a href='!#'>Mobile Apps</a>
+                                    <a href='/comingsoon'>Mobile Apps</a>
                                 </li>
                             </ul>
                         </nav>

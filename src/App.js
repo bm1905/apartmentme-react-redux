@@ -12,6 +12,7 @@ import RentalSearchListing from 'components/rental/rental-listing/RentalSearchLi
 import RentalDetail from 'components/rental/rental-detail/RentalDetail';
 import { RentalCreate } from 'components/rental/rental-create/RentalCreate';
 import { HomePage } from 'components/home/HomePage';
+import { ComingSoon } from 'components/comingsoon/ComingSoon';
 import Login from 'components/login/Login';
 import { Register } from 'components/register/Register';
 import { RentalManage } from 'components/rental/rental-manage/RentalManage';
@@ -60,6 +61,7 @@ class App extends Component {
                 <Route exact path='/rentals/:id' component={RentalDetail} />
                 <Route exact path='/login' component={Login} />
                 <LoggedInRoute exact path='/register' component={Register} />
+                <Route exact path='/comingsoon' component={ComingSoon} />
               </Switch>
             </div>
             <InfoFooter />
