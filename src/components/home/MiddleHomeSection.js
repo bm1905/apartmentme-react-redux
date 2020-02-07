@@ -3,6 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import House1 from '../../styles/images/house1.jpg';
 import House2 from '../../styles/images/house2.jpg';
+import  { TemporaryTemplate } from './TemporaryTemplate';
 
 const MiddleHomeSection = (props) => {
     var settings = {
@@ -11,17 +12,19 @@ const MiddleHomeSection = (props) => {
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
-    //   centerMode: true,
+      // centerMode: true,
       responsive: [
+   
         {
-            breakpoint: 1500,
+            breakpoint: 1400,
             settings: {
               slidesToShow: 3,
               slidesToScroll: 2,
               infinite: true,
               dots: true
             }
-          },{
+          },
+          {
         breakpoint: 1100,
         settings: {
           slidesToShow: 2,
@@ -48,70 +51,71 @@ const MiddleHomeSection = (props) => {
         <div>
             <div className='mainContainer'>
                 <div className='textTitle'>
-                    <h2 className='text'>Featured homes in your area</h2>
-                    <h3 className='homesAvailable'>10 homes in Shreveport</h3>
+                    <h2 className='text'>Featured Listings</h2>
+                    <h3 className='homesAvailable'>Features homes in Shreveport</h3>
                 </div>
                 <Slider {...settings}>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House2 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House2 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div> 
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' />< TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House2 } className='houseList' alt='' />< TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' />< TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' />< TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House2 } className='houseList' alt='' />< TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' />< TemporaryTemplate /></div> 
                 </Slider>
+
                 <div className='seeMoreContainer'>
                     <button className='seeMoreListing'>See more listings</button>
                 </div>
             </div>
-            <hr></hr>
+            <hr className='line'></hr>
             <div className='mainContainer'>
                 <div className='textTitle'>
                     <h2 className='text'>Most affordable</h2>
                     <h3 className='highestPriced'>The most affordable homes in Shreveport</h3>
                 </div>
-                <Slider {...settings}>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House2 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House2 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div> 
+                <Slider {...settings} className='hi'>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House2 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House2 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div> 
                 </Slider>
                 <div className='seeMoreContainer'>
                     <button className='seeMoreListing'>See more listings</button>
                 </div>
             </div>
-            <hr></hr>
+            <hr className='line'></hr>
             <div className='mainContainer'>
                 <div className='textTitle'>
-                    <h2 className='text'>Safest neighbours</h2>
-                    <h3 className='mostSquareFootage'>Shreveport homes with lowest crime rates</h3>
+                    <h2 className='text'>Safe Area</h2>
+                    <h3 className='mostSquareFootage'>Shreveport homes located at lowest crime rates</h3>
                 </div>
             <Slider {...settings}>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House2 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House2 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div> 
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House2 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House2 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div> 
                 </Slider>
                 <div className='seeMoreContainer'>
                     <button className='seeMoreListing'>See more listings</button>
                 </div>
             </div>
-            <hr></hr>
+            <hr className='line'></hr>
             <div className='mainContainer'>
                 <div className='textTitle'>
-                    <h2 className='text'>Most recently built</h2>
-                    <h3 className='mostRecent'>Newly built homes in Shreveport</h3>
+                    <h2 className='text'>New Listings</h2>
+                    <h3 className='mostRecent'>Newly listed homes in Shreveport</h3>
                 </div>
             <Slider {...settings}>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House2 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div>
-                    <div><img src={ House2 } className='houseList' alt='' /> </div>
-                    <div><img src={ House1 } className='houseList' alt='' /> </div> 
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House2 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House2 } className='houseList' alt='' /> < TemporaryTemplate /></div>
+                    <div className='mainBlock'><img src={ House1 } className='houseList' alt='' /> < TemporaryTemplate /></div> 
                 </Slider>
                 <div className='seeMoreContainer'>
                     <button className='seeMoreListing'>See more listings</button>
