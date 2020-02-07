@@ -41,7 +41,7 @@ export class HomePage extends React.Component {
             <div className='homeContainer'>
                 <div className='videoSection'>
                     <header className='searchBoxHeader'>
-                        <h1 className='headerText'>Find your way home...</h1>
+                        <h1 className='headerText'>Find your way home</h1>
                     </header>
                     {/* <div className='searchInputAndButton'>
                         <input placeholder='Enter an address, neighborhood, city or ZIP code' className='searchInput' type='text' />

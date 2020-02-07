@@ -9,7 +9,17 @@ button {
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 60px;
+    // margin: 0, 0;
+
+
+}
+
+.slick-slide img { margin-left: auto; margin-right: auto; }
+
+.line {
+    border: 1px solid $light-gray-color;
+    opacity: 0.2;
+    border-radius: 5px;
 }
 
 .textTitle {
@@ -59,8 +69,45 @@ button {
   border-radius: 4px;
   padding: 5px;
   width: 330px;
+
 }
+
+.mainBlock {
+position: relative;
+text-align: center;
+}
+
+// .detailList {
+//     position: absolute;
+//     bottom: 8px;
+//     left: 16px;
+// }
+  
+
+
+.main-title {
+    font-size: 19px;
+    margin: 3px 0;
+    color: $main-text-gray-color;
+}
+
+.main-detail {
+    margin: 0;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.main-price {
+    font-size: 14px;
+    font-weight: 300;
+    color: #7e7e7e;
+    margin-bottom: 0;
+}
+
+
 
 houseList:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   }
+
