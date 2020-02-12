@@ -13,7 +13,7 @@
       .rental {
         &-type {
           font-size: 14px;
-          font-weight: 300;
+          font-weight: 700;
           text-transform: uppercase;
           margin: 0;
         }
@@ -36,7 +36,7 @@
   
         &-title {
           margin-bottom: 5px;
-          font-size: 32px;
+          font-size: 25px;
           font-weight: 700;
         }
   
@@ -48,7 +48,7 @@
   
         &-room-info {
           margin-bottom: 20px;
-          font-weight: 300;
+          font-weight: 500;
           font-size: 16px;
   
           span {
@@ -79,5 +79,87 @@
         }
       }
     }
+  }
+
+  .smallLetter {
+    font-size: 14px;
+
+  }
+
+  Collapsible {
+    background-color: $main-color;
+  }
+  
+  
+  //The content within the collaspable area
+  .Collapsible__contentInner {
+    padding: 10px;
+    border: 1px solid $main-text-gray-color;
+    border-top: 0;
+    margin-right: 10px;
+  
+    p {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 20px;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  //The link which when clicked opens the collapsable area
+  .Collapsible__trigger {
+    display: block;
+    font-weight: 400;
+    text-decoration: none;
+    color: $main-text-gray-color;
+    position: relative;
+    border: 1px solid white;
+    padding: 10px;
+
+    background: $main-color;
+    color: white;
+  
+  
+    &:after {
+      font-family: 'FontAwesome';
+      content: '\f107';
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      display: block;
+      transition: transform 300ms;
+    }
+  
+    &.is-open {
+      &:after {
+        transform: rotateZ(180deg);
+      }
+    }
+  
+    &.is-disabled {
+      opacity: 0.5;
+      background-color: grey;
+    }
+  }
+  
+  .CustomTriggerCSS {
+    background-color: lightcoral;
+    transition: background-color 200ms ease;
+    
+    
+  }
+  
+  .CustomTriggerCSS--open {
+    background-color: darkslateblue;
+  }
+  
+  .Collapsible__custom-sibling {
+    padding: 5px;
+    font-size: 12px;
+    background-color: #CBB700;
+    color: black;
   }
   

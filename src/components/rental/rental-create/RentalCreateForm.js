@@ -41,6 +41,13 @@ const RentalCreateForm = props => {
             component={Input}
           />
             <Field
+            name="zip"
+            type="number"
+            label='Zip Code'
+            className='form-control'
+            component={Input}
+          />
+            <Field
             options={options}
             name="category"
             type="text"
@@ -60,10 +67,49 @@ const RentalCreateForm = props => {
             className='form-control'
             component={Input}
           />
+            <Field
+            name="bath"
+            type="number"
+            label='Baths'
+            className='form-control'
+            component={Input}
+          />
+           <Field
+            name="area"
+            type="number"
+            label='Total Area in Sq. Feet'
+            className='form-control'
+            component={Input}
+            />
+
         <Field
             name="shared"
             type="checkbox"
-            label='Shared'
+            label='Shared Living'
+            className='form-control'
+            className='sharedBox'
+            component={Input}
+          />
+          <Field
+            name="pets"
+            type="checkbox"
+            label='Pets Allowed'
+            className='form-control'
+            className='sharedBox'
+            component={Input}
+          />
+          <Field
+            name="parking"
+            type="checkbox"
+            label='Reserved Parking'
+            className='form-control'
+            className='sharedBox'
+            component={Input}
+          />
+          <Field
+            name="laundry"
+            type="checkbox"
+            label='Laundry Room'
             className='form-control'
             className='sharedBox'
             component={Input}
@@ -72,6 +118,14 @@ const RentalCreateForm = props => {
             name="dailyRate"
             type="text"
             label='Daily Rate'
+            className='form-control'
+            symbol='$'
+            component={Input}
+          />
+            <Field
+            name="monthlyRate"
+            type="text"
+            label='Monthly Rate'
             className='form-control'
             symbol='$'
             component={Input}
@@ -86,5 +140,5 @@ const RentalCreateForm = props => {
 
 export default reduxForm({
   form: 'rentalcreateform', // a unique identifier for this form
-  initialValues: { shared: true, category: 'apartment' }
+  initialValues: { shared: true, pets: true, parking: true, laundry: true, category: 'apartment' }
 })(RentalCreateForm)

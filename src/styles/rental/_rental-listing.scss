@@ -10,19 +10,45 @@
         text-decoration: none;
       }
     }
+    
+    // .card-img-top {
+    //   position: relative;
+    //   display: inline-block;
+    // }
+
+    // .card-img-top .card-text {
+    //   position: absolute;
+    //   z-index: 999;
+    //   margin: 0 auto;
+    //   left: 0;
+    //   right: 0;
+    //   top: 40%; /* Adjust this value to move the positioned div up and down */
+    //   text-align: center;
+    //   width: 60%;
+    // }
   
     /* SINGLE CARD STYLES*/
     .bwm-card {
       border: none;
       margin-bottom: 20px;
+
+      .card-text-lg {
+        font-size: 20px;
+        font-weight: 500;
+        color: $main-white-color;
+        margin-bottom: 0;
+        margin-top: -30px;
+        background-color: rgba($color: $main-color, $alpha: 0.8);
+      }
+
   
       .card-block {
         padding-top: 8px;
   
         .card-subtitle {
           margin: 0;
-          font-weight: 500;
-          font-size: 12px;
+          font-weight: 600;
+          font-size: 15px;
           text-transform: uppercase;
         }
   
@@ -33,8 +59,8 @@
         }
   
         .card-text {
-          font-size: 14px;
-          font-weight: 300;
+          font-size: 15px;
+          font-weight: 400;
           color: #7e7e7e;
           margin-bottom: 0;
         }
@@ -45,7 +71,7 @@
   @media screen and (min-width: 900px) {
     .wideView {
       width: 100vw;
-      height: 100vh;
+      // height: 100vh;
       position: relative;
       left: 50%;
       right: 50%;

@@ -32,7 +32,7 @@ class RentalListing extends React.Component {
             <div className='mixedView'>
                 <div className='row'>
                 <div className='col-md-6 homesFlow'>
-                    <h1 className='page-title'>Apartments/Homes within 71115</h1>
+                    <h1 className='page-title'>Route for Testing Purpose</h1>
                     <RentalList rentals={this.props.rentals} />
                 </div>
                 <div className='col-md-6 mapsFlow'>
