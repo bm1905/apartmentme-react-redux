@@ -16,6 +16,7 @@ class Login extends React.Component {
         this.props.dispatch(actions.login(userData));
     }
     
+    
     render() {
         const { isAuth, errors } = this.props.auth;
         const { successRegister } = this.props.location.state || false;
@@ -26,6 +27,7 @@ class Login extends React.Component {
 
 
         return (
+
             <section id="login">
                 <div className="bwm-form">
                     <div className="row">

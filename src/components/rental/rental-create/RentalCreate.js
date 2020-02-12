@@ -19,6 +19,7 @@ export class RentalCreate extends React.Component {
     }
 
     createRental(rentalData) {
+        // console.log(rentalData);
         actions.createRental(rentalData).then(
             (rental) => this.setState({redirect: true}),
             (errors) => this.setState({errors})
@@ -28,7 +29,7 @@ export class RentalCreate extends React.Component {
     render() {
 
         if (this.state.redirect) {
-            return <Redirect to={{pathname:'/rentals'}}/>
+            return <Redirect to={{pathname:'/'}}/>
         }
         return (
             <section id='newRental'>

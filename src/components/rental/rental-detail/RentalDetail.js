@@ -6,6 +6,7 @@ import { RentalMap } from './RentalMap';
 import Booking from 'components/booking/Booking';
 
 import * as actions from 'actions';
+import { ContactOwnerCard } from 'components/contact/ContactOwnerCard';
 
 class RentalDetail extends React.Component {
 
@@ -24,11 +25,14 @@ class RentalDetail extends React.Component {
                     {/* <Search /> */}
                     <div className='upper-section'>
                         <div className='row'>
-                        <div className='col-md-6'>
+                        {/* <div className='col-md-6'>
+                        <RentalMap location={`${rental.city}, ${rental.street}`}/>
+                        </div> */}
+                        <div className='col-md-8'>
                             <img src={rental.image} alt=''></img>
                         </div>
-                        <div className='col-md-6'>
-                            <RentalMap location={`${rental.city}, ${rental.street}`}/>
+                        <div className='col-md-4'>
+                            <ContactOwnerCard />
                         </div>
                         </div>
                     </div>
@@ -42,6 +46,10 @@ class RentalDetail extends React.Component {
                         <Booking rental={rental}/>
                         </div>
                         </div>
+                    </div>
+                    <div className='col-md-12'>
+                        <hr></hr>
+                        <RentalMap location={`${rental.city}, ${rental.street}`}/>
                     </div>
                     </section>
 
