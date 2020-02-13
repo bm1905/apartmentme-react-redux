@@ -57,6 +57,12 @@
     }
   }
   
+  .contact {
+    &-note-text {
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
   
   // MODAL
   .booking-modal {

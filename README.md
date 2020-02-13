@@ -23,7 +23,7 @@ You will also see any lint errors in the console.
 ## Fixes to be made
 <ul>
     <li>Calendar dates are not marked taken instantly (modal not closed) - BookingModal.js, Booking.js</li>
-    <li>Correct the route when logged in or registered (Displays default 71115 rental).</li>
+    <li>Map not updated when updating city name.</li>
     <li>Uppercase first letter of city name from search bar to lists.</li>
     <li>Image slides in login/register/create rentals.</li>
     <li>Format code.</li>

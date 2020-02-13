@@ -4,6 +4,16 @@ import Slider from 'react-slick';
 import House1 from '../../styles/images/house1.jpg';
 import House2 from '../../styles/images/house2.jpg';
 import  { TemporaryTemplate } from './TemporaryTemplate';
+import { RentalCard } from '../rental/rental-listing/RentalCard';
+
+// const rental = this.props.rentals;
+// function renderRentals() {
+//     return this.props.rentals.map((rental, index) => {
+//         return (
+//             <RentalCard key={index} rental={rental}/>
+//         )
+//     }); 
+// }
 
 const MiddleHomeSection = (props) => {
     var settings = {

@@ -20,7 +20,7 @@ export class ContactOwnerCard extends React.Component {
             </div>
         <button className='btn btn-bwm btn-confirm btn-block'>Email Owner</button>
         <hr></hr>
-        <p className='booking-note-text'>
+        <p className='contact-note-text'>
         By proceeding, you consent to receive calls and texts at the number you provided, including marketing by autodialer 
         and prerecorded and artificial voice, and email, from us.
         </p>

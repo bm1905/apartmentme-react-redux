@@ -1,8 +1,8 @@
 import React from 'react';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
-import{ ToastContainer, toast } from 'react-toastify';
 import { BookingModal } from './BookingModal';
 import { getRangeOfDates, toUpperCase, rentalType } from 'helpers';
+import{ toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as moment from 'moment';
@@ -136,8 +136,6 @@ class Booking extends React.Component {
     return (
         <div className='booking'>
             { rentalType(rental.shared) === 'shared' && <React.Fragment>
-
-            <ToastContainer />
             <h3 className='booking-price'>{ toUpperCase(rental.category)} <span className='booking-per-night'>/{rentalType(rental.shared)}</span></h3>
             <hr></hr>
             { (!isAuth) && 
