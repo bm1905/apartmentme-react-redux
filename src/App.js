@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 
+import{ ToastContainer } from 'react-toastify';
 import Header from 'components/shared/Header';
 import { InfoFooter } from 'components/shared/InfoFooter';
 import { Footer } from 'components/shared/Footer';
@@ -49,6 +50,7 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className='App'>
+            <ToastContainer/>
             <Header logout={this.logout}/>
             <Route exact path='/' component={HomePage} />
             <div className='container'>

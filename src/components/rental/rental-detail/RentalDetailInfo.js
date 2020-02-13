@@ -25,12 +25,12 @@ export function RentalDetailInfo(props) {
             <hr></hr>
             <div className='rental-room-info'>
                 <div className='row rental-assets'>
-                    <div className='col-md-6'>
+                    <div className='col-md-6 blockObject'>
                         <span><i className='fa fa-bed'></i>{rental.bedrooms} bedrooms</span>
                         <span><i className='fa fa-paw'></i> Pets Allowed: {petsFriendly(rental.pets)}</span>
                         <span><i className='fa fa-cube'></i> Laundry Room: {insideLaundry(rental.laundry)}</span>
                     </div>
-                    <div className='col-md-6'>
+                    <div className='col-md-6 blockObject'>
                         <span><i className='fa fa-bath'></i> {rental.bedrooms} baths</span>
                         <span><i className='fa fa-car'></i> Reserved Parking: {reservedParking(rental.parking)}</span>
                     </div>

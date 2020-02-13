@@ -1,7 +1,6 @@
 import React from 'react';
 import { pretifyDate, toUpperCase } from 'helpers';
 import { Link } from 'react-router-dom';
-import { render } from '@testing-library/react';
 
 
 export class RentalManageCard extends React.Component {
@@ -44,13 +43,16 @@ export class RentalManageCard extends React.Component {
         <div className={`card text-center ${deleteClass}`}>
             <div className='card-block'>
             <h4 className='card-title'>{rental.title} - {toUpperCase(rental.city)}</h4>
-            <Link className='btn btn-bwm' to={`/rentals/${rental._id}`}>Property</Link>
+            <Link className='btn btn-bwm' to={`/rentals/${rental._id}`}>View Property</Link>
             { rental.bookings && rental.bookings.length > 0 && modal }
             </div>
             <div className='card-footer text-muted'>
             Created on {pretifyDate(rental.createdAt)}
             { !wantDelete && 
-                <button onClick={() => { this.showDeleteMenu() }} className='btb btn-danger'> Delete </button>
+            <React.Fragment>
+                <button onClick={() => { this.showDeleteMenu() }} className='btn btn-danger'> Delete </button>
+                <Link className='btn btn-warning' to={{pathname: `/rentals/${rental._id}`, state: {isUpdate: true}}}> Edit </Link>
+            </React.Fragment>
             }
             { wantDelete &&
             <div className='delete-menu'>

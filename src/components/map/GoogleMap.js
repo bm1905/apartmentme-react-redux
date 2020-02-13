@@ -64,7 +64,14 @@ function withGeocode(WrappedComponent) {
             this.getGeocodeLocation();
         }
 
+        componentDidUpdate() {
+            if (this.props.reloading) {
+                this.getGeocodeLocation();
+            }
+        }
+
         updateCordinates(coordinates) {
+            this.props.mapLoaded();
             this.setState({
                 coordinates,
                 isLocationLoaded: true
@@ -112,13 +119,16 @@ function withGeocode(WrappedComponent) {
                         this.updateCordinates(coordinates);
                     },
                     (error) => {
+                        this.props.mapLoaded();
                         this.setState({isError: true, isLocationLoaded: true});
                     });
             }
         }
 
         render() {
+            // debugger;
             // alert(this.props.location)
+
             return (
                 <WrappedComponent {...this.state}/>
             )

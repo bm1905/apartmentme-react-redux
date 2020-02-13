@@ -27,7 +27,7 @@ class BookingManage extends React.Component {
                 { !isFetching && bookings.length === 0 &&
                     <div className='alert alert-warning'>
                         No bookings yet! You can search and create one from rental listings at required area. <br></br>
-                        <Link style={{'margin-left': '10px'}} className='btn btn-bwm' to='/'>Search Listings</Link>
+                        <Link style={{'marginLeft': '10px'}} className='btn btn-bwm' to='/'>Search Listings</Link>
                     </div>
                 }
             </section>
