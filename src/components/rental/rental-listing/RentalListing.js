@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import RentalSearchInput from '../../../components/rental/RentalSearchInput';
 
 import * as actions from 'actions';
+import { MiddleHomeSection } from '../../home/MiddleHomeSection';
 
 class RentalListing extends React.Component {
     
@@ -34,6 +35,8 @@ class RentalListing extends React.Component {
                 <div className='col-md-6 homesFlow'>
                     <h1 className='page-title'>Route for Testing Purpose</h1>
                     <RentalList rentals={this.props.rentals} />
+                    {/* <MiddleHomeSection rentals={this.props.rentals} /> */}
+                    
                 </div>
                 <div className='col-md-6 mapsFlow'>
                     {/* <h1>Maps here</h1> */}

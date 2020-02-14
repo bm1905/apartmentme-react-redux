@@ -1,16 +1,25 @@
 import React from 'react';
 // import { withRouter } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 // import Slider from 'react-slick';
-import MiddleHomeSection from './MiddleHomeSection';
+import { MiddleHomeSection } from './MiddleHomeSection';
 
-export class HomePage extends React.Component {
+
+import * as actions from 'actions';
+
+class HomePage extends React.Component {
 
     constructor() {
         super();
 
         this.searchInput = React.createRef();
+        // this.handleSearch = this.handleSearch.bind(this)
     }
+
+    componentWillMount() {
+        this.props.dispatch(actions.fetchRentals());
+    }
+
 
     
 
@@ -36,6 +45,7 @@ export class HomePage extends React.Component {
     
 
     render() {
+        const rental = this.props.rentals;
         return (
         <div className='mainBody'>
             <div className='homeContainer'>
@@ -64,7 +74,7 @@ export class HomePage extends React.Component {
                 </div>
             </div> 
             <div className='featuredContainer'>
-                <MiddleHomeSection />
+                <MiddleHomeSection rentals={this.props.rentals} />
             </div>      
         </div>  
         )
@@ -87,3 +97,11 @@ export class HomePage extends React.Component {
 // }
 
 // export default withRouter(RentalSearchInput)
+
+function mapStateToProps(state) {
+    return {
+        rentals: state.rentals.data
+    }
+}
+
+export default connect(mapStateToProps)(HomePage)

@@ -9,6 +9,7 @@ import RentalSearchInput from '../../../components/rental/RentalSearchInput';
 
 import { toUpperCase } from 'helpers';
 import * as actions from 'actions';
+import { MiddleHomeSection } from '../../home/MiddleHomeSection';
 
 class RentalSearchListing extends React.Component {
 
