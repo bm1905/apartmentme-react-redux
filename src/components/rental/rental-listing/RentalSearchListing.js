@@ -9,6 +9,7 @@ import RentalSearchInput from '../../../components/rental/RentalSearchInput';
 
 import { toUpperCase } from 'helpers';
 import * as actions from 'actions';
+import { MiddleHomeSection } from '../../home/MiddleHomeSection';
 
 class RentalSearchListing extends React.Component {
 
@@ -68,18 +69,19 @@ class RentalSearchListing extends React.Component {
         const rental = this.props.rentals;
         return (
             <section id='rentalListing' className='wideView'>
+                <div className='mainContainerSearch'>
                 <RentalSearchInput />
-
-                <div className='mixedView'>
-                    <div className='row'>
-                    <div className='col-md-12 '>
-                        {this.renderTitle()}
-                        <RentalList rentals={this.props.rentals.data} />
-                    </div>
-                    {/* <div className='col-md-6 mapsFlow'> */}
-                        {/* <h1>Maps here</h1> */}
-                        {/* <RentalMapMain location={`${rental.city}, ${rental.street}`}/> */}
-                    {/* </div> */}
+                    <div className='mixedView'>
+                        <div className='row'>
+                        <div className='col-md-12 '>
+                            {this.renderTitle()}
+                            <RentalList rentals={this.props.rentals.data} />
+                        </div>
+                        {/* <div className='col-md-6 mapsFlow'> */}
+                            {/* <h1>Maps here</h1> */}
+                            {/* <RentalMapMain location={`${rental.city}, ${rental.street}`}/> */}
+                        {/* </div> */}
+                        </div>
                     </div>
                 </div>
             </section>
