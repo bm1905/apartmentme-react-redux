@@ -26,7 +26,7 @@ export class FileUpload extends React.Component {
     onChange(event) {
         const {input: {onChange}} = this.props;
 
-        // onChange('https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg');
+        onChange('https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg');
         const selectedFile = event.target.file[0];
 
         if (selectedFile) {

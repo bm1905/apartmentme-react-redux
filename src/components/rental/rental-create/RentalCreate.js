@@ -36,7 +36,7 @@ export class RentalCreate extends React.Component {
                 <div className='bwm-form'>
                     <div className='row'>
                     <div className='col-md-5'>
-                        <h1 className='page-title'>Post Rental</h1>
+                        <h1 className='page-title'>Property Information</h1>
                         <RentalCreateForm submitCb={this.createRental} 
                                             options={this.rentalCategories}
                                             errors={this.state.errors}/>
