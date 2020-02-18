@@ -12,6 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'bootstrap-daterangepicker/daterangepicker.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'react-image-crop/dist/ReactCrop.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
