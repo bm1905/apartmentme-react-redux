@@ -85,7 +85,7 @@ const RentalCreateForm = props => {
         <Field
             name="shared"
             type="checkbox"
-            label='Shared Living'
+            label='Shared Living (Will the property be shared among you/others?)'
             className='form-control'
             className='sharedBox'
             component={Input}
@@ -93,7 +93,7 @@ const RentalCreateForm = props => {
           <Field
             name="pets"
             type="checkbox"
-            label='Pets Allowed'
+            label='Pets Allowed (Are pets allowed?)'
             className='form-control'
             className='sharedBox'
             component={Input}
@@ -101,7 +101,7 @@ const RentalCreateForm = props => {
           <Field
             name="parking"
             type="checkbox"
-            label='Reserved Parking'
+            label='Parking (Is parking available?)'
             className='form-control'
             className='sharedBox'
             component={Input}
@@ -109,11 +109,19 @@ const RentalCreateForm = props => {
           <Field
             name="laundry"
             type="checkbox"
-            label='Laundry Room'
+            label='Laundry Room (Is laundry available inside property?)'
             className='form-control'
             className='sharedBox'
             component={Input}
           />
+          {/* <Field
+            name="shortStay"
+            type="checkbox"
+            label='Daily Rate Value (Do you want to list your property as per day fee?)'
+            className='form-control'
+            className='sharedBox'
+            component={Input}
+          /> */}
           <Field
             name="dailyRate"
             type="text"
@@ -122,6 +130,7 @@ const RentalCreateForm = props => {
             symbol='$'
             component={Input}
           />
+          
             <Field
             name="monthlyRate"
             type="text"
@@ -129,7 +138,7 @@ const RentalCreateForm = props => {
             className='form-control'
             symbol='$'
             component={Input}
-          />
+          />  
         <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
           Post Rental
         </button>
@@ -140,5 +149,5 @@ const RentalCreateForm = props => {
 
 export default reduxForm({
   form: 'rentalcreateform', // a unique identifier for this form
-  initialValues: { shared: true, pets: true, parking: true, laundry: true, category: 'apartment' }
+  initialValues: { shared: true, pets: true, parking: true, laundry: true, shortStay: true, category: 'apartment' }
 })(RentalCreateForm)

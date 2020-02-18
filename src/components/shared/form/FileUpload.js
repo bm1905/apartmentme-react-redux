@@ -86,8 +86,12 @@ export class FileUpload extends React.Component {
     });
   }
 
+
   async onCropCompleted(crop, pixelCrop) {
     const { selectedFile, initialImageBase64 } = this.state;
+//         onChange('https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg');
+//         const selectedFile = event.target.file[0];
+
 
     if (selectedFile && (pixelCrop.height > 0 && pixelCrop.width > 0)) {
       const img = new Image();
