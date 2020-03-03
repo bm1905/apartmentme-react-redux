@@ -10,7 +10,8 @@ export class FileUpload extends React.Component {
 
   onChange(event) {
     const { input: { onChange } } = this.props;
-    onChange('https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg');
+    var random = Math.floor((Math.random() * 10) + 1);
+    onChange(`https://apt-ng-dev.s3.amazonaws.com/homes/h${random}.jpg`);
   }
 
   render() {
