@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import Slider from 'react-slick';
 import { MiddleHomeSection } from './MiddleHomeSection';
+// import MiddleHomeSection from './MiddleHomeSection';
 
 
 import * as actions from 'actions';
@@ -21,7 +22,7 @@ class HomePage extends React.Component {
     }
 
 
-    
+
 
     handleSearch() {
         const { history } = this.props;
@@ -38,45 +39,45 @@ class HomePage extends React.Component {
     // }
 
     onKeyPress = (e) => {
-        if(e.which === 13) {
-          this.handleSearch();
+        if (e.which === 13) {
+            this.handleSearch();
         }
-      }
-    
+    }
+
 
     render() {
         const rental = this.props.rentals;
         return (
-        <div className='mainBody'>
-            <div className='homeContainer'>
-                <div className='videoSection'>
-                    <header className='searchBoxHeader'>
-                        <h1 className='headerText'>Find your way home</h1>
-                    </header>
-                    {/* <div className='searchInputAndButton'>
+            <div className='mainBody'>
+                <div className='homeContainer'>
+                    <div className='videoSection'>
+                        <header className='searchBoxHeader'>
+                            <h1 className='headerText'>Find your way home</h1>
+                        </header>
+                        {/* <div className='searchInputAndButton'>
                         <input placeholder='Enter an address, neighborhood, city or ZIP code' className='searchInput' type='text' />
                         <button className='searchButton' type='submit'>
                             <h5 className='searchBtnText'>Search</h5>
                         </button>
                     </div> */}
 
-                <div className="search-box">
-                    <input ref={this.searchInput}
-                        type="text" 
-                        onKeyPress={this.onKeyPress}
-                        name="" 
-                        className="search-txt" 
-                        placeholder="Enter an address, city or ZIP Code..."/>
-                    <a onClick={() => {this.handleSearch()}} className="search-btn">
-                    <i className="fa fa-search" aria-hidden="true"></i>
-                    </a>
+                        <div className="search-box">
+                            <input ref={this.searchInput}
+                                type="text"
+                                onKeyPress={this.onKeyPress}
+                                name=""
+                                className="search-txt"
+                                placeholder="Enter an address, city or ZIP Code..." />
+                            <a onClick={() => { this.handleSearch() }} className="search-btn">
+                                <i className="fa fa-search" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+                <div className='featuredContainer'>
+                    <MiddleHomeSection rentals={this.props.rentals} />
                 </div>
-            </div> 
-            <div className='featuredContainer'>
-                <MiddleHomeSection rentals={this.props.rentals} />
-            </div>      
-        </div>  
+            </div>
         )
     }
 }

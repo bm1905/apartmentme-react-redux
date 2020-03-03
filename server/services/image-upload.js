@@ -26,7 +26,7 @@ const upload = multer({
     s3,
     bucket: 'apt-ng-dev',
     metadata: function (req, file, cb) {
-      cb(null, {fieldName: 'TESTING_METADATA'});
+      cb(null, { fieldName: 'TESTING_METADATA' });
     },
     key: function (req, file, cb) {
       cb(null, Date.now().toString())

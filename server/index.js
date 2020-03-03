@@ -6,23 +6,24 @@ const Rental = require('./models/rental');
 const FakeDb = require('./fake-db');
 const path = require('path');
 
-const   rentalRoutes = require('./routes/rentals'),
-        userRoutes = require('./routes/users'),
-        bookingRoutes = require('./routes/bookings');
-        imageUploadRoutes = require('./routes/image-upload');
+const rentalRoutes = require('./routes/rentals'),
+    userRoutes = require('./routes/users'),
+    bookingRoutes = require('./routes/bookings');
+imageUploadRoutes = require('./routes/image-upload');
 
 // var url = config.DB_URI || "mongodb://localhost/apartmentme-react-redux";
 var url = config.DB_URI;
 
-mongoose.connect(url, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true, 
-    useFindAndModify: false, 
-    useCreateIndex: true }).then(() => {
-        if (process.env.NODE_ENV !== 'production') {
-            const fakeDb = new FakeDb();
-            // fakeDb.seedDb();
-        }
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+}).then(() => {
+    if (process.env.NODE_ENV !== 'production') {
+        const fakeDb = new FakeDb();
+        // fakeDb.seedDb();
+    }
 }).catch(err => console.error(err));
 
 const app = express();
@@ -38,14 +39,14 @@ if (process.env.NODE_ENV === 'production') {
     const appPath = path.join(__dirname, '..', 'build');
     app.use(express.static(appPath));
 
-    app.get('*', function(req, res) {
+    app.get('*', function (req, res) {
         res.sendFile(path.resolve(appPath, 'index.html'));
     })
 }
 
 const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, function(){
+app.listen(PORT, function () {
     console.log("Server started!");
 });
 
