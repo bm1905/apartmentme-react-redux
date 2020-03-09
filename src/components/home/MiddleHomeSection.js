@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 // import '../styles/middleHomeSection.css';
 import Slider from 'react-slick';
 import House1 from '../../styles/images/h1.jpg';
@@ -83,7 +84,8 @@ export class MiddleHomeSection extends React.Component {
                     </Slider>
 
                     <div className='seeMoreContainer'>
-                        <a href='/rentals/Shreveport/homes'><button className='seeMoreListing' onClick=''>See more listings</button></a>
+                        <Link to='/rentals/Shreveport/homes'><button className='seeMoreListing'>See more listings</button></Link>
+                        {/* <a href='/rentals/Shreveport/homes'><button className='seeMoreListing' onClick=''>See more listings</button></a> */}
                     </div>
                 </div>
                 <hr className='line'></hr>
@@ -101,7 +103,7 @@ export class MiddleHomeSection extends React.Component {
                         <div className='mainBlock'><img src={House2} className='houseList' alt='' />< Template1 /></div>
                     </Slider>
                     <div className='seeMoreContainer'>
-                        <a href='/rentals/Shreveport/homes'><button className='seeMoreListing' onClick=''>See more listings</button></a>
+                        <Link to='/rentals/Shreveport/homes'><button className='seeMoreListing'>See more listings</button></Link>
                     </div>
                 </div>
                 <hr className='line'></hr>
@@ -119,7 +121,7 @@ export class MiddleHomeSection extends React.Component {
                         <div className='mainBlock'><img src={House1} className='houseList' alt='' />< Template5 /></div>
                     </Slider>
                     <div className='seeMoreContainer'>
-                        <a href='/rentals/Shreveport/homes'><button className='seeMoreListing' onClick=''>See more listings</button></a>
+                        <Link to='/rentals/Shreveport/homes'><button className='seeMoreListing'>See more listings</button></Link>
                     </div>
                 </div>
                 <hr className='line'></hr>
@@ -137,7 +139,7 @@ export class MiddleHomeSection extends React.Component {
                         <div className='mainBlock'><img src={House6} className='houseList' alt='' />< Template4 /></div>
                     </Slider>
                     <div className='seeMoreContainer'>
-                        <a href='/rentals/Shreveport/homes'><button className='seeMoreListing' onClick=''>See more listings</button></a>
+                        <Link to='/rentals/Shreveport/homes'><button className='seeMoreListing'>See more listings</button></Link>
                     </div>
                 </div>
             </div>

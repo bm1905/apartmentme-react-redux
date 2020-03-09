@@ -49,15 +49,15 @@ class Header extends React.Component {
     }
 
     render() {
-        const {username, isAuth} = this.props.auth;
+        const { username, isAuth } = this.props.auth;
         return (
             <header className='mainHeader'>
                 <nav className='navbar navbar-dark navbar-expand-lg'>
                     <div className='container'>
-                    <img src={ process.env.PUBLIC_URL + '/img/apartmentme-logo.png' } className='mainLogo' alt='' />
-                    {/* <img className='displayImg' src={process.env.PUBLIC_URL + '/img/apartmentme-logo.png'} alt=""/> */}
+                        <img src={process.env.PUBLIC_URL + '/img/apartmentme-logo.png'} className='mainLogo' alt='' />
+                        {/* <img className='displayImg' src={process.env.PUBLIC_URL + '/img/apartmentme-logo.png'} alt=""/> */}
                         <Link className='navbar-brand' to='/'>ApartmentMe</Link>
-                        
+
                         {/* <RentalSearchInput /> */}
                         {/* <form className='form-inline my-2 my-lg-0'>
                             <input className='form-control mr-sm-2 bwm-search' type='search' placeholder="Search City" aria-label='Search'></input>
@@ -68,11 +68,11 @@ class Header extends React.Component {
                         </button>
                         <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
                             <div className='navbar-nav ml-auto'>
-                                { isAuth && 
+                                {isAuth &&
                                     <a className='nav-item nav-link'>{username}</a>
-                                } 
-                            {this.renderOwnerSection(isAuth)}
-                            {this.renderAuthButtons(isAuth)}
+                                }
+                                {this.renderOwnerSection(isAuth)}
+                                {this.renderAuthButtons(isAuth)}
                             </div>
                         </div>
                     </div>
