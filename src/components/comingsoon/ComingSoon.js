@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 export class ComingSoon extends React.Component {
 
     calculateTime() {
-        var countDownDate = new Date("Mar 5, 2020 15:37:25").getTime();
+        var countDownDate = new Date("April 5, 2020 15:37:25").getTime();
          
          // Update the count down every second.
          var countdownfunction = setInterval(function() {

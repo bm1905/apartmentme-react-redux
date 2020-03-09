@@ -11,8 +11,8 @@ export function RentalDetailInfo(props) {
 
     return (
         <div className='rental'>
-            { rentalType(rental.shared) === 'shared' &&  <h1 className='rental-title'>${rental.dailyRate}<span className='smallLetter'> per day</span></h1> }
-            { rentalType(rental.shared) === 'entire' &&  <h1 className='rental-title'>${rental.monthlyRate}<span className='smallLetter'> per month</span></h1> }
+            { rentalType(rental.shared) === 'shared' &&  <h1 className='rental-title'>${rental.dailyRate}<span className='smallLetter'>/day</span></h1> }
+            { rentalType(rental.shared) === 'entire' &&  <h1 className='rental-title'>${rental.monthlyRate}<span className='smallLetter'>/month</span></h1> }
 
             <hr/>
             <h2 className={`rental-type ${rental.category}`}>{rentalType(rental.shared)} {rental.category}</h2>
