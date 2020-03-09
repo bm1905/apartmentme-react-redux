@@ -70,7 +70,7 @@ class RentalSearchListing extends React.Component {
         return (
             <section id='rentalListing' className='wideView'>
                 <div className='mainContainerSearch'>
-                <RentalSearchInput />
+                <RentalSearchInput searchedCity={this.state.searchedCity}/>
                     <div className='mixedView'>
                         <div className='row'>
                         <div className='col-md-12 '>

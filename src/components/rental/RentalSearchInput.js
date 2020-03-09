@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import { toUpperCase } from '../../helpers';
+
 class RentalSearchInput extends React.Component {
 
     constructor() {
@@ -20,6 +22,8 @@ class RentalSearchInput extends React.Component {
         const city = this.searchInput.current.value;
 
         city ? history.push(`/rentals/${city}/homes`) : history.push('/');
+
+
     }
 
     render() {
@@ -36,7 +40,10 @@ class RentalSearchInput extends React.Component {
                     ref={this.searchInput}
                     className='form-control mr-sm-2 bwm-search'
                     type='search'
-                    placeholder="City name.."
+                    placeholder='City name..'
+                    readonly
+                    // value='Shreveport'
+                    value={toUpperCase(this.props.searchedCity)}
                     aria-label='Search'></input>
                 <select className='form-control mr-sm-2 bwm-search'>
                     <option value="entire">Whole Apartment</option>
