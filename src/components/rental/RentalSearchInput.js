@@ -24,24 +24,29 @@ class RentalSearchInput extends React.Component {
 
     render() {
         return (
-        // <div className="input-group md-form form-sm form-1 pl-0 size" id="search-size">
-        //     <div className="input-group-prepend">
-        //         <span className="input-group-text cyan lighten-2" id="basic-text1"><i className="fa fa-search text-white" aria-hidden="true"></i></span>
-        //     </div>
-        //     <input className="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search"></input>
-        // </div>
+            // <div className="input-group md-form form-sm form-1 pl-0 size" id="search-size">
+            //     <div className="input-group-prepend">
+            //         <span className="input-group-text cyan lighten-2" id="basic-text1"><i className="fa fa-search text-white" aria-hidden="true"></i></span>
+            //     </div>
+            //     <input className="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search"></input>
+            // </div>
 
-        <div className='form-inline my-2 my-lg-0'  id="search-size">
-            <input onKeyPress={(event) => { this.handleKeyPress(event)}}
-                ref={this.searchInput}
-                className='form-control mr-sm-2 bwm-search' 
-                type='search' 
-                placeholder="Filter options..." 
-                aria-label='Search'></input>
-            <button onClick={() => {this.handleSearch()}}
-                className='btn btn-outline-success my-2 my-sm-0 btn-bwm-search' 
-                type='submit'>Search</button>
-        </div> 
+            <div className='form-inline my-2 my-lg-0' id="search-size">
+                <input onKeyPress={(event) => { this.handleKeyPress(event) }}
+                    ref={this.searchInput}
+                    className='form-control mr-sm-2 bwm-search'
+                    type='search'
+                    placeholder="City name.."
+                    aria-label='Search'></input>
+                <select className='form-control mr-sm-2 bwm-search'>
+                    <option value="entire">Whole Apartment</option>
+                    <option value="shared">Single Room</option>
+                    <option selected value="both">All Available</option>
+                </select>
+                <button onClick={() => { this.handleSearch() }}
+                    className='btn btn-outline-success my-2 my-sm-0 btn-bwm-search'
+                    type='submit'>Search</button>
+            </div>
         )
     }
 }

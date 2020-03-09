@@ -3,20 +3,46 @@ const { normalizeErrors } = require('../helpers/mongoose');
 const jwt = require('jsonwebtoken');
 const config = require('../config');
 
-exports.auth = function(req, res) {
-    const {email, password} = req.body;
+exports.getUser = function (req, res) {
+    const requestedUserId = req.params.id;
+    const user = res.locals.user;
+
+    if (requestedUserId === user.id) {
+        // Show all data.
+        User.findById(requestedUserId, function (err, foundUser) {
+            if (err) {
+                return res.status(422).send({ errors: normalizeErrors(err.errors) });
+            }
+            return res.json(foundUser);
+        })
+    }
+    else {
+        // Restrict some data.
+        User.findById(requestedUserId)
+            .select('-password')
+            .exec(function (err, foundUser) {
+                if (err) {
+                    return res.status(422).send({ errors: normalizeErrors(err.errors) });
+                }
+                return res.json(foundUser);
+            })
+    }
+}
+
+exports.auth = function (req, res) {
+    const { email, password } = req.body;
 
     if (!password || !email) {
-        return res.status(422).send({errors: [{title: 'Missing data!', detail: 'Provide email and password!'}]});
+        return res.status(422).send({ errors: [{ title: 'Missing data!', detail: 'Provide email and password!' }] });
     }
 
-    User.findOne({email}, function(err, user) {
+    User.findOne({ email }, function (err, user) {
         if (err) {
-            return res.status(422).send({errors: normalizeErrors(err.errors)});
+            return res.status(422).send({ errors: normalizeErrors(err.errors) });
         }
 
         if (!user) {
-            return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'User does nor exist!'}]});
+            return res.status(422).send({ errors: [{ title: 'Invalid User!', detail: 'User does nor exist!' }] });
         }
 
         if (user.hasSamePassword(password)) {
@@ -24,32 +50,32 @@ exports.auth = function(req, res) {
             const token = jwt.sign({
                 userId: user.id,
                 username: user.username
-            }, config.SECRET, { expiresIn: '1h'});
+            }, config.SECRET, { expiresIn: '1h' });
 
             return res.json(token);
         }
         else {
-            return res.status(422).send({errors: [{title: 'Invalid Data!', detail: 'Incorrect email or password!'}]});
+            return res.status(422).send({ errors: [{ title: 'Invalid Data!', detail: 'Incorrect email or password!' }] });
         }
     });
 }
 
-exports.register = function(req, res) {
-    const {username, email, password, passwordConfirmation} = req.body;
+exports.register = function (req, res) {
+    const { username, email, password, passwordConfirmation } = req.body;
 
     if (!password || !email) {
-        return res.status(422).send({errors: [{title: 'Missing data!', detail: 'Provide email and password!'}]});
+        return res.status(422).send({ errors: [{ title: 'Missing data!', detail: 'Provide email and password!' }] });
     }
     if (password !== passwordConfirmation) {
-        return res.status(422).send({errors: [{title: 'Invalid password!', detail: 'Password does not match!'}]});
+        return res.status(422).send({ errors: [{ title: 'Invalid password!', detail: 'Password does not match!' }] });
     }
 
-    User.findOne({email}, function(err, existingUser) {
-        if(err) {
-            return res.status(422).send({errors: normalizeErrors(err.errors)});
+    User.findOne({ email }, function (err, existingUser) {
+        if (err) {
+            return res.status(422).send({ errors: normalizeErrors(err.errors) });
         }
         if (existingUser) {
-            return res.status(422).send({errors: [{title: 'Invalid email!', detail: 'Email is already taken!'}]});
+            return res.status(422).send({ errors: [{ title: 'Invalid email!', detail: 'Email is already taken!' }] });
         }
 
         const user = new User({
@@ -57,26 +83,26 @@ exports.register = function(req, res) {
             email,
             password
         });
-        user.save(function(err) {
+        user.save(function (err) {
             if (err) {
-                return res.status(422).send({errors: normalizeErrors(err.errors)});
+                return res.status(422).send({ errors: normalizeErrors(err.errors) });
             }
-            return res.json({'registered': true});
+            return res.json({ 'registered': true });
         });
     });
 
     // res.json({username, email});
 }
 
-exports.authMiddleware = function(req, res, next) {
+exports.authMiddleware = function (req, res, next) {
     const token = req.headers.authorization;
 
     if (token) {
         const user = parseToken(token);
 
-        User.findById(user.userId, function(err, user) {
+        User.findById(user.userId, function (err, user) {
             if (err) {
-                return res.status(422).send({errors: normalizeErrors(err.errors)});
+                return res.status(422).send({ errors: normalizeErrors(err.errors) });
             }
 
             if (user) {
@@ -98,5 +124,5 @@ function parseToken(token) {
 }
 
 function notAuthorized(res) {
-    return res.status(401).send({errors: [{title: 'Not authorized!', detail: 'Login first!'}]});
+    return res.status(401).send({ errors: [{ title: 'Not authorized!', detail: 'Login first!' }] });
 }

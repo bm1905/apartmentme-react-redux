@@ -2,7 +2,7 @@ import React from 'react';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import { BookingModal } from './BookingModal';
 import { getRangeOfDates, toUpperCase, rentalType } from 'helpers';
-import{ toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as moment from 'moment';
@@ -40,7 +40,7 @@ class Booking extends React.Component {
     }
 
     getBookedOutDates() {
-        const {bookings} = this.props.rental;
+        const { bookings } = this.props.rental;
 
         if (bookings && bookings.length > 0) {
             bookings.forEach(booking => {
@@ -80,25 +80,25 @@ class Booking extends React.Component {
 
     cancelConfirmation() {
         this.setState({
-          modal: {
-            open: false
-          }
+            modal: {
+                open: false
+            }
         })
-      }
+    }
 
     addNewBookedOutDates(booking) {
         const dateRange = getRangeOfDates(booking.startAt, booking.endAt);
         this.bookedOutDates.push(...dateRange);
-      }
+    }
 
     resetData() {
         this.dateRef.current.value = '';
 
-        this.setState({proposedBooking: {guests: ''}});
+        this.setState({ proposedBooking: { guests: '' } });
     }
 
     confirmProposedData() {
-        const {startAt, endAt} = this.state.proposedBooking;
+        const { startAt, endAt } = this.state.proposedBooking;
         const days = getRangeOfDates(startAt, endAt).length - 1;
         const { rental } = this.props;
 
@@ -124,72 +124,72 @@ class Booking extends React.Component {
                 toast.success('Successfully booked!');
             },
             (errors) => {
-                this.setState({errors});
+                this.setState({ errors });
             }
         )
     }
 
-  render() {
-      const { rental, auth: { isAuth } } = this.props;
-      const { startAt, endAt, guests } = this.state.proposedBooking;
+    render() {
+        const { rental, auth: { isAuth } } = this.props;
+        const { startAt, endAt, guests } = this.state.proposedBooking;
 
-    return (
-        <div className='booking'>
-            { rentalType(rental.shared) === 'shared' && <React.Fragment>
-            <h3 className='booking-price'>{ toUpperCase(rental.category)} <span className='booking-per-night'>/{rentalType(rental.shared)}</span></h3>
-            <hr></hr>
-            { (!isAuth) && 
-                <Link className='btn btn-bwm btn-confirm btn-block' to={{pathname: '/login'}}>
-                    Login to Book
+        return (
+            <div className='booking'>
+                {rentalType(rental.shared) === 'shared' && <React.Fragment>
+                    <h3 className='booking-price'>{toUpperCase(rental.category)} <span className='booking-per-night'>/{rentalType(rental.shared)}</span></h3>
+                    <hr></hr>
+                    {(!isAuth) &&
+                        <Link className='btn btn-bwm btn-confirm btn-block' to={{ pathname: '/login' }}>
+                            Login to Rent Room
                 </Link>
-            }
-            { isAuth &&
-                <React.Fragment>
-                    <div className='form-group'>
-                    <label htmlFor='dates'>Dates</label>
-                    <DateRangePicker onApply={this.handleApply}
-                                        isInvalidDate={this.checkInvalidDates}
-                                        opens='left' containerStyles={{display: 'block'}}>
-                        <input ref={this.dateRef} id='dates' type='text' className='form-control'></input>
-                    </DateRangePicker>
-                    </div>
-                    <div className='form-group'>
-                    <label htmlFor='guests'>Guests</label>
-                    <input onChange={(event) => {this.selectGuests(event)}} 
-                                value={guests}
-                                type='number' 
-                                className='form-control' 
-                                id='guests' 
-                                aria-describedby='guests' 
-                                placeholder=''></input>
-                    </div>
-                    <button disabled={!startAt || !endAt || !guests || !authService.isAuthenticated() } onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve place now</button>
-                    <p className='booking-note-text'>
-                    Only registered users are able to reserve.
+                    }
+                    {isAuth &&
+                        <React.Fragment>
+                            <div className='form-group'>
+                                <label htmlFor='dates'>Dates</label>
+                                <DateRangePicker onApply={this.handleApply}
+                                    isInvalidDate={this.checkInvalidDates}
+                                    opens='left' containerStyles={{ display: 'block' }}>
+                                    <input ref={this.dateRef} id='dates' type='text' className='form-control'></input>
+                                </DateRangePicker>
+                            </div>
+                            <div className='form-group'>
+                                <label htmlFor='guests'>Guests</label>
+                                <input onChange={(event) => { this.selectGuests(event) }}
+                                    value={guests}
+                                    type='number'
+                                    className='form-control'
+                                    id='guests'
+                                    aria-describedby='guests'
+                                    placeholder=''></input>
+                            </div>
+                            <button disabled={!startAt || !endAt || !guests || !authService.isAuthenticated()} onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve place now</button>
+                            <p className='booking-note-text'>
+                                Only registered users are able to reserve.
                     </p>
-                </React.Fragment>
-            }
-            <hr></hr>
-            <p className='booking-note-title'>People are currently looking at this place</p>
-            <p className='booking-note-text'>
-            Over the last week, 10 others have checked it out for the same address.
+                        </React.Fragment>
+                    }
+                    <hr></hr>
+                    <p className='booking-note-title'>People are currently looking at this place</p>
+                    <p className='booking-note-text'>
+                        Over the last week, 10 others have checked it out for the same address.
             </p>
-            <BookingModal open={this.state.modal.open} 
-                            closeModal={this.cancelConfirmation}
-                            confirmModal={this.reserveRental}
-                            booking={this.state.proposedBooking}
-                            errors={this.state.errors}
-                            rentalPrice={rental.dailyRate}/>
-                            </React.Fragment>}
+                    <BookingModal open={this.state.modal.open}
+                        closeModal={this.cancelConfirmation}
+                        confirmModal={this.reserveRental}
+                        booking={this.state.proposedBooking}
+                        errors={this.state.errors}
+                        rentalPrice={rental.dailyRate} />
+                </React.Fragment>}
 
-                            { rentalType(rental.shared) !== 'shared' && <React.Fragment>
-                                <h3 className='booking-price'>Booking options not available for this property.</h3>
-                                <span className='booking-per-night'>Only Monthly rate available.</span>
-                                </React.Fragment>}
-        </div>
-    
-    )
-  }
+                {rentalType(rental.shared) !== 'shared' && <React.Fragment>
+                    <h3 className='booking-price'>Room rental is not available for this property.</h3>
+                    <span className='booking-per-night'>Only Monthly rate available. <br /> Please contact the owner for availability.</span>
+                </React.Fragment>}
+            </div>
+
+        )
+    }
 }
 
 function mapStateToProps(state) {

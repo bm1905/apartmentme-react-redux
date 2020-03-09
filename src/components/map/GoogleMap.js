@@ -8,39 +8,43 @@ import {
     Marker,
     Circle,
     InfoWindow
-  } from "react-google-maps";
-  
+} from "react-google-maps";
+
 function MapComponent(props) {
 
     const { coordinates, isError, isLocationLoaded } = props;
 
-      return (
-        <GoogleMap
-            defaultZoom={13}
-            defaultCenter={coordinates}
-            center={coordinates}
-            options={{disableDefaultUI: isError ? true : false}}
-            >
-            {isLocationLoaded && !isError && <Circle
+    return (
+        <React.Fragment>
+            <GoogleMap
+                defaultZoom={13}
+                defaultCenter={coordinates}
                 center={coordinates}
-                strokeColor={"red"}
-                radius={800}
-                options={{
-                    fillColor: '#f00',
-                    strokeColor: '#1B1464'
-                }}
-                position={coordinates}
-            />}
-            {isLocationLoaded && !isError && <Marker
-                position={coordinates}
-            />}
-            {isLocationLoaded && isError && <InfoWindow position={coordinates} options={{maxWidth: 300}}>
-                <div>
-                    Sorry, the location could not be identified. Please re-enter a valid address.
+                options={{ disableDefaultUI: isError ? true : false }}
+            >
+                {isLocationLoaded && !isError && <Circle
+                    center={coordinates}
+                    strokeColor={"red"}
+                    radius={800}
+                    options={{
+                        fillColor: '#f00',
+                        strokeColor: '#1B1464'
+                    }}
+                    position={coordinates}
+                />}
+                {isLocationLoaded && !isError && <Marker
+                    position={coordinates}
+                />}
+                {isLocationLoaded && isError && <InfoWindow position={coordinates} options={{ maxWidth: 300 }}>
+                    <div>
+                        Sorry, the location could not be identified. Please re-enter a valid address.
                 </div>
-            </InfoWindow> }
-        </GoogleMap>
-      )
+                </InfoWindow>}
+            </GoogleMap>
+            <button className='btn btn-bwm btn-form'>Crime</button>
+            <button className='btn btn-bwm btn-map'>Education</button>
+        </React.Fragment>
+    )
 }
 
 function withGeocode(WrappedComponent) {
@@ -79,14 +83,14 @@ function withGeocode(WrappedComponent) {
         }
 
         geocodeLocation(location) {
-            
+
             const geocoder = new window.google.maps.Geocoder();
 
             return new Promise((resolve, reject) => {
-                geocoder.geocode({address: location}, (result, status) => {
-                    if(status === 'OK') {
+                geocoder.geocode({ address: location }, (result, status) => {
+                    if (status === 'OK') {
                         const geometry = result[0].geometry.location;
-                        const coordinates = { lat: geometry.lat(), lng: geometry.lng()};
+                        const coordinates = { lat: geometry.lat(), lng: geometry.lng() };
 
                         // debugger;
 
@@ -120,7 +124,7 @@ function withGeocode(WrappedComponent) {
                     },
                     (error) => {
                         this.props.mapLoaded();
-                        this.setState({isError: true, isLocationLoaded: true});
+                        this.setState({ isError: true, isLocationLoaded: true });
                     });
             }
         }
@@ -130,10 +134,10 @@ function withGeocode(WrappedComponent) {
             // alert(this.props.location)
 
             return (
-                <WrappedComponent {...this.state}/>
+                <WrappedComponent {...this.state} />
             )
         }
     }
 }
 
-  export const MapWithGeocode = withScriptjs(withGoogleMap(withGeocode(MapComponent)));
+export const MapWithGeocode = withScriptjs(withGoogleMap(withGeocode(MapComponent)));

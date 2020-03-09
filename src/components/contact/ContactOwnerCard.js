@@ -15,10 +15,10 @@ export class ContactOwnerCard extends React.Component {
                 <input type='text' className='form-control' id='email' aria-describedby='emailHelp' placeholder=''></input>
                 <label>Phone</label>
                 <input type='text' className='form-control' id='phone' aria-describedby='emailHelp' placeholder=''></input>
-                {/* <label>Description</label>
-                <input type='text' className='form-control' id='description' aria-describedby='emailHelp' placeholder=''></input> */}
+                <label>Description</label>
+                <input type='text' className='form-control' id='description' aria-describedby='emailHelp' placeholder=''></input>
             </div>
-        <button className='btn btn-bwm btn-confirm btn-block'>Email Owner</button>
+        <button className='btn btn-bwm btn-confirm btn-block'>Contact Owner</button>
         <hr></hr>
         <p className='contact-note-text'>
         By proceeding, you consent to receive calls and texts at the number you provided, including marketing by autodialer 

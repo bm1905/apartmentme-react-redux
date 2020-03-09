@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { RentalList } from './RentalList';
-import { RentalMapMain } from './RentalMapMain';
+import  RentalMapMain  from './RentalMapMain';
 import { connect } from 'react-redux';
 // import { BrowserRouter, Route } from 'react-router-dom';
 // import { Provider } from 'react-redux';
