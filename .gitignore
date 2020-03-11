@@ -27,3 +27,4 @@ yarn-error.log*
 
 # Keys
 /server/config/dev.js
+/server/.vscode
