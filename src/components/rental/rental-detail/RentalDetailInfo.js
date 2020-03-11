@@ -4,6 +4,7 @@ import { toUpperCase, rentalType } from 'helpers';
 import Collapsible from 'react-collapsible';
 import { petsFriendly } from 'helpers';
 import { reservedParking, insideLaundry } from 'helpers';
+import { ReviewModal } from '../../review/ReviewModal';
 
 export function RentalDetailInfo(props) {
 
@@ -54,6 +55,12 @@ export function RentalDetailInfo(props) {
                 <Collapsible trigger="Nearby Schools">
                     <p>To be filled</p>
                 </Collapsible>
+                <hr />
+                <Collapsible trigger="Reviews">
+                    <p>To be filled</p>
+                    < ReviewModal rentalId={rental._id}/>
+                </Collapsible>
+                
             </div>
         </div>
     )
