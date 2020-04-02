@@ -41,8 +41,8 @@ function MapComponent(props) {
                 </div>
                 </InfoWindow>}
             </GoogleMap>
-            <button className='btn btn-bwm btn-map'>Crime</button>
-            <button className='btn btn-bwm btn-map'>Education</button>
+            {/* <button className='btn btn-bwm btn-map'>Crime</button>
+            <button className='btn btn-bwm btn-map'>Education</button> */}
         </React.Fragment>
     )
 }

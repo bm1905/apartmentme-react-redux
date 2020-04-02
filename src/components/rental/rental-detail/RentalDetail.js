@@ -2,6 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ImageGallery from 'react-image-gallery';
 import House1 from '../../../styles/images/1.jpg';
+import StarRatings from 'react-star-ratings';
+import { RentalAssets } from './RentalAssets';
+import Collapsible from 'react-collapsible';
+
+import { pretifyDate } from 'helpers';
+
+import { ReviewModal } from '../../review/ReviewModal';
 
 
 import { RentalDetailInfo } from './RentalDetailInfo';
@@ -15,7 +22,7 @@ import * as actions from 'actions';
 import { ContactOwnerCard } from 'components/contact/ContactOwnerCard';
 
 const PREFIX_URL = 'https://apt-ng-dev.s3.amazonaws.com/pictures/';
-{/* <img src={rental.image} alt=''></img> */}
+{/* <img src={rental.image} alt=''></img> */ }
 
 class RentalDetail extends React.Component {
 
@@ -25,7 +32,8 @@ class RentalDetail extends React.Component {
 
         this.state = {
             isAllowed: false,
-            isFetching: true
+            isFetching: true,
+            reviews: []
         }
 
         this.verifyRentalOwner = this.verifyRentalOwner.bind(this);
@@ -34,8 +42,14 @@ class RentalDetail extends React.Component {
     componentWillMount() {
         // Dispatch action.
         const rentalId = this.props.match.params.id;
+        // debugger;
 
-        this.props.dispatch(actions.fetchRentalById(rentalId));
+        this.props.dispatch(actions.fetchRentalById(rentalId)).then(
+            (rental) => {
+                // debugger;
+                this.getReviews(rental._id);
+            }
+        );
     }
 
     componentDidMount() {
@@ -70,8 +84,17 @@ class RentalDetail extends React.Component {
             : <RentalDetailInfo rental={rental} />;
     }
 
+    getReviews = (rentalId) => {
+        actions.getReviews(rentalId)
+            .then((reviews) => {
+                // debugger;
+                this.setState({ reviews });
+            })
+    }
+
     render() {
         const { rental, errors } = this.props;
+        const { reviews } = this.state;
 
         const images = [
             {
@@ -119,7 +142,7 @@ class RentalDetail extends React.Component {
                 thumbnail: `${PREFIX_URL}t10.jpg`,
             },
         ];
-        
+
 
         if (rental._id) {
             return (
@@ -149,8 +172,85 @@ class RentalDetail extends React.Component {
                                 <Booking rental={rental} />
                             </div>
                         </div>
+
+
+                        <div className="container collap">
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <hr></hr>
+                                    <Collapsible trigger="Details">
+                                        <p className='rental-description'>
+                                            {rental.description}
+                                        </p>
+                                    </Collapsible>
+                                    <hr></hr>
+                                    <Collapsible trigger="Assets">
+                                        <RentalAssets />
+                                    </Collapsible>
+                                    <hr></hr>
+                                    <Collapsible trigger="Neighborhood">
+                                        <p>To be filled</p>
+                                    </Collapsible>
+                                    <hr></hr>
+                                    <Collapsible trigger="Nearby Schools">
+                                        <p>To be filled</p>
+                                    </Collapsible>
+                                    <hr />
+                                    {/* <Collapsible trigger="Reviews">
+                    <p>To be filled</p>
+                    < ReviewModal rentalId={rental._id}/>
+                </Collapsible> */}
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        {reviews && reviews.length > 0 &&
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <section style={{ marginBottom: '40px' }}>
+                                        <h2>Reviews</h2>
+                                        { reviews.map(review =>
+                                            <div key={review._id} className="card review-card">
+                                                <div className="card-body">
+                                                    <div className="row">
+                                                        <div className="col-md-1 user-image">
+                                                            <img src="https://image.ibb.co/jw55Ex/def_face.jpg" className="img img-rounded img-fluid" />
+                                                            
+                                                        </div>
+                                                        <div className="col-md-11">
+                                                            <div>
+                                                                <a><strong>{review.user.username}</strong></a>
+                                                                <div className="review-section">
+                                                                    <StarRatings
+                                                                        rating={review.rating}
+                                                                        starRatedColor="orange"
+                                                                        starHoverColor="orange"
+                                                                        starDimension="25px"
+                                                                        starSpacing="2px"
+                                                                        numberOfStars={5}
+                                                                        name='rating'
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="clearfix"></div>
+                                                            <p>{review.text}</p>
+                                                            <p>{pretifyDate(review.createdAt)}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </section>
+                                </div>
+                            </div>
+                        }
+
+                        < ReviewModal rentalId={rental._id} />
+
                     </div>
-                    <div className='col-md-8'>
+                    <div className='col-md-12'>
                         <hr></hr>
                         <RentalMap location={`${rental.city}, ${rental.street}`} />
                     </div>

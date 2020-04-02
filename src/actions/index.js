@@ -92,10 +92,12 @@ export const fetchRentalById = (rentalId) => {
   return function (dispatch) {
     dispatch(fetchRentalByIdInit());
     // Send request to server, async code.
-    axios.get(`/api/v1/rentals/${rentalId}`)
+    return axios.get(`/api/v1/rentals/${rentalId}`)
       .then(res => res.data)
-      .then(rental => dispatch(fetchRentalByIdSuccess(rental))
-      );
+      .then(rental => {
+        dispatch(fetchRentalByIdSuccess(rental));
+        return rental;
+      });
   }
 }
 
@@ -263,7 +265,13 @@ export const uploadImage = image => {
 // Review
 
 export const createReview = (reviewData, rentalId) => {
-  return axiosInstance.post(`/reviews/rentald=${rentalId}`, reviewData)
+  return axiosInstance.post(`/reviews?rentalid=${rentalId}`, reviewData)
     .then(res => res.data)
-    .catch(({response}) => Promise.reject(response.data.errors))
+    .catch(({ response }) => Promise.reject(response.data.errors))
+}
+
+export const getReviews = (rentalId) => {
+  return axiosInstance.get(`/reviews?rentalid=${rentalId}`)
+    .then(res => res.data)
+    .catch(({ response }) => Promise.reject(response.data.errors))
 }
