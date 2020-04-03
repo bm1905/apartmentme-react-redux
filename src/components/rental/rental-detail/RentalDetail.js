@@ -197,94 +197,105 @@ class RentalDetail extends React.Component {
                                         <p>To be filled</p>
                                     </Collapsible>
                                     <hr />
-                                    {/* <Collapsible trigger="Reviews">
-                    <p>To be filled</p>
-                    < ReviewModal rentalId={rental._id}/>
-                </Collapsible> */}
+                                    <Collapsible trigger="Reviews">
+                                        {!isAuth &&
+                                            <p>Please login to view or write reviews!</p>
+                                        }
+                                        {reviews && reviews.length > 0 &&
+                                            <div className="row">
+                                                <div className="col-md-12">
+                                                    <section style={{ marginBottom: '40px' }}>
+                                                        {/* <h2>Reviews</h2> */}
+                                                        <hr></hr>
+                                                        {reviews.map(review =>
+                                                            // <div key={review._id} className="card review-card">
+                                                            //     <div className="card-body">
+                                                            //         <div className="row">
+                                                            //             <div className="col-md-3 user-image">
+                                                            //                 <img src="https://image.ibb.co/jw55Ex/def_face.jpg" className="img img-rounded img-fluid" />
+                                                            //                 <a><strong>{review.user.username}</strong></a>
+
+                                                            //             </div>
+                                                            //             <div className="col-md-9">
+                                                            //                 <div>
+                                                            //                     <p>{shortDate(review.createdAt)}</p>
+                                                            //                     <div className="review-section">
+                                                            //                         <StarRatings
+                                                            //                             rating={review.rating}
+                                                            //                             starRatedColor="orange"
+                                                            //                             starHoverColor="orange"
+                                                            //                             starDimension="25px"
+                                                            //                             starSpacing="2px"
+                                                            //                             numberOfStars={5}
+                                                            //                             name='rating'
+                                                            //                         />
+                                                            //                     </div>
+                                                            //                 </div>
+                                                            //                 <div className="clearfix"></div>
+                                                            //                 <p>{review.text}</p>
+                                                            //             </div>
+                                                            //         </div>
+                                                            //     </div>
+                                                            // </div>
+                                                            <div key={review._id}>
+                                                                <div>
+                                                                    <div className="review-image-container">
+                                                                        <img src="https://image.ibb.co/jw55Ex/def_face.jpg" className="review-image" />
+                                                                    </div>
+                                                                    <div style={{ marginLeft: '60px' }}>
+                                                                        <div>
+                                                                            <div>{review.user.username}</div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <span>{shortDate(review.createdAt)}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div style={{ marginTop: '10px' }}>
+                                                                    <div>
+                                                                        <StarRatings
+                                                                            rating={review.rating}
+                                                                            starRatedColor="orange"
+                                                                            starHoverColor="orange"
+                                                                            starDimension="20px"
+                                                                            starSpacing="2px"
+                                                                            numberOfStars={5}
+                                                                            name='rating'
+                                                                        />
+                                                                    </div>
+                                                                    <div>
+                                                                        <p>{review.text}</p>
+                                                                    </div>
+                                                                </div>
+                                                                <hr></hr>
+                                                            </div>
+                                                        )}
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        }
+                                        < ReviewModal rentalId={rental._id} />
+                                    </Collapsible>
                                 </div>
                             </div>
                         </div>
 
 
 
-                        {/* {reviews && reviews.length > 0 && */}
-                        <div className="row">
-                            <div className="col-md-12">
-                                <section style={{ marginBottom: '40px' }}>
-                                    <h2>Reviews</h2>
-                                    <hr></hr>
-                                    {!isAuth &&
-                                        <p>Please Login to see reviews!</p>
-                                    }
-                                    {reviews.map(review =>
-                                        // <div key={review._id} className="card review-card">
-                                        //     <div className="card-body">
-                                        //         <div className="row">
-                                        //             <div className="col-md-3 user-image">
-                                        //                 <img src="https://image.ibb.co/jw55Ex/def_face.jpg" className="img img-rounded img-fluid" />
-                                        //                 <a><strong>{review.user.username}</strong></a>
 
-                                        //             </div>
-                                        //             <div className="col-md-9">
-                                        //                 <div>
-                                        //                     <p>{shortDate(review.createdAt)}</p>
-                                        //                     <div className="review-section">
-                                        //                         <StarRatings
-                                        //                             rating={review.rating}
-                                        //                             starRatedColor="orange"
-                                        //                             starHoverColor="orange"
-                                        //                             starDimension="25px"
-                                        //                             starSpacing="2px"
-                                        //                             numberOfStars={5}
-                                        //                             name='rating'
-                                        //                         />
-                                        //                     </div>
-                                        //                 </div>
-                                        //                 <div className="clearfix"></div>
-                                        //                 <p>{review.text}</p>
-                                        //             </div>
-                                        //         </div>
-                                        //     </div>
-                                        // </div>
-                                        <div key={review._id}>
-                                            <div>
-                                                <div className="review-image-container">
-                                                    <img src="https://image.ibb.co/jw55Ex/def_face.jpg" className="review-image" />
-                                                </div>
-                                                <div style={{ marginLeft: '60px' }}>
-                                                    <div>
-                                                        <div>{review.user.username}</div>
-                                                    </div>
-                                                    <div>
-                                                        <span>{shortDate(review.createdAt)}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div style={{ marginTop: '10px' }}>
-                                                <div>
-                                                    <StarRatings
-                                                        rating={review.rating}
-                                                        starRatedColor="orange"
-                                                        starHoverColor="orange"
-                                                        starDimension="20px"
-                                                        starSpacing="2px"
-                                                        numberOfStars={5}
-                                                        name='rating'
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <p>{review.text}</p>
-                                                </div>
-                                            </div>
-                                            <hr></hr>
-                                        </div>
-                                    )}
-                                </section>
-                            </div>
-                        </div>
-                        {/* // } */}
+                        {/* <p>Properies: {rental._id}</p>
+                        <p>Properies: {rental.street}</p>
+                        <p>Properies: {rental.title}</p>
 
-                        < ReviewModal rentalId={rental._id} />
+                        <div>
+                            {reviews.map(review =>
+                                <div key={review._id}>
+                                     <p>Reviews: {review._id}</p>
+                                    <p>Reviews: {review.text}</p>
+                                </div>
+                            )}
+                        </div> */}
+                        {/* < ReviewModal rentalId={rental._id} /> */}
 
                     </div>
                     <div className='col-md-12'>
