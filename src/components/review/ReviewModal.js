@@ -1,10 +1,12 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
 import StarRatings from 'react-star-ratings';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import * as actions from 'actions';
 
-export class ReviewModal extends React.Component {
+class ReviewModal extends React.Component {
 
     state = {
         open: false,
@@ -49,11 +51,15 @@ export class ReviewModal extends React.Component {
 
     render() {
 
+        const { isAuth } = this.props.auth;
         const { open, text, rating } = this.state;
 
         return (
+
             <React.Fragment>
-                <button className='btn btn-bwm' onClick={this.openModal}>Write a review</button>
+                {isAuth &&
+                    <button className='btn btn-bwm' onClick={this.openModal}>Write a review</button>
+                }
                 <Modal open={open} onClose={this.closeModal} little classNames={{ modal: 'review-modal' }}>
                     <h4 className='modal-title title'> Write a review </h4>
                     <div className='modal-body'>
@@ -81,6 +87,7 @@ export class ReviewModal extends React.Component {
                         <button type='button' onClick={this.closeModal} className='btn btn-bwm'>Cancel</button>
                     </div>
                 </Modal>
+
             </React.Fragment>
 
         )
@@ -88,3 +95,11 @@ export class ReviewModal extends React.Component {
 
 
 }
+
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(ReviewModal));
