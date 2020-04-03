@@ -13,7 +13,7 @@ export const toUpperCase = value => value ? titelize(value) : '';
 
 export const pretifyDate = date => moment(date).format('MMM Do YY');
 
-export const shortDate = date => moment(date).format('MM-YYYY');
+export const shortDate = date => moment(date).format('MMMM Do, YYYY');
 
 export const addComma = value => value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
