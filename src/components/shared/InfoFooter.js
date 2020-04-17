@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function InfoFooter() {
     return (
@@ -10,22 +10,22 @@ export function InfoFooter() {
                         <h6 className='boxHeader'>Real Estate</h6>
                         <ul className='infoList'>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Browse all homes</a>
+                                <Link to='/comingsoon'>Browse all homes</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Albuquerque real estate</a>
+                                <Link to='/comingsoon'>Albuquerque real estate</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Atlanta real estate</a>
+                                <Link to='/comingsoon'>Atlanta real estate</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Austin real estate</a>
+                                <Link to='/comingsoon'>Austin real estate</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Baltimore real estate</a>
+                                <Link to='/comingsoon'>Baltimore real estate</Link>
                             </li>
                             <li className='listItem' id='more'>
-                                <a href='/comingsoon'>More</a>
+                                <Link to='/comingsoon'>More</Link>
                             </li>
                         </ul>
                     </div>
@@ -33,22 +33,22 @@ export function InfoFooter() {
                         <h6 className='boxHeader'>Rentals</h6>
                         <ul className='infoList'>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Rental Buildings</a>
+                                <Link to='/comingsoon'>Rental Buildings</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Atlanta apartments for rent</a>
+                                <Link to='/comingsoon'>Atlanta apartments for rent</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Austin apartments for rent</a>
+                                <Link to='/comingsoon'>Austin apartments for rent</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Balitmore apartments for rent</a>
+                                <Link to='/comingsoon'>Balitmore apartments for rent</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Boston apartments for rent</a>
+                                <Link to='/comingsoon'>Boston apartments for rent</Link>
                             </li>
                             <li className='listItem' id='more'>
-                                <a href='/comingsoon'>More</a>
+                                <Link to='/comingsoon'>More</Link>
                             </li>
                         </ul>
                     </div>
@@ -56,22 +56,22 @@ export function InfoFooter() {
                         <h6 className='boxHeader'>Mortgage Rates</h6>
                         <ul className='infoList'>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Current mortgage rates</a>
+                                <Link to='/comingsoon'>Current mortgage rates</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Alaska mortgage rates</a>
+                                <Link to='/comingsoon'>Alaska mortgage rates</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Alabama mortgage rates</a>
+                                <Link to='/comingsoon'>Alabama mortgage rates</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Arkansas mortgage rates</a>
+                                <Link to='/comingsoon'>Arkansas mortgage rates</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Arizona mortgage rates</a>
+                                <Link to='/comingsoon'>Arizona mortgage rates</Link>
                             </li>
                             <li className='listItem' id='more'>
-                                <a href='/comingsoon'>More</a>
+                                <Link to='/comingsoon'>More</Link>
                             </li>
                         </ul>
                     </div>
@@ -79,22 +79,22 @@ export function InfoFooter() {
                         <h6 className='boxHeader'>Browse Homes</h6>
                         <ul className='infolist'>
                             <li className='listItem'>
-                                <a href='/comingsoon'>California</a>
+                                <Link to='/comingsoon'>California</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Texas</a>
+                                <Link to='/comingsoon'>Texas</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>New York</a>
+                                <Link to='/comingsoon'>New York</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Florida</a>
+                                <Link to='/comingsoon'>Florida</Link>
                             </li>
                             <li className='listItem'>
-                                <a href='/comingsoon'>Illinois</a>
+                                <Link to='/comingsoon'>Illinois</Link>
                             </li>
                             <li className='listItem' id='more'>
-                                <a href='/comingsoon'>More</a>
+                                <Link to='/comingsoon'>More</Link>
                             </li>
                         </ul>
                     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
     return (
@@ -34,43 +34,43 @@ export function Footer() {
                         </li>
                     </ul>
                 </nav> */}
-                
+
                 <footer className='footer'>
                     <div className='navSeparator'>
                         <nav className='links'>
                             <ul className='footerLinks'>
                                 <li>
-                                    <a href='/comingsoon'>About</a>
+                                    <Link to='/comingsoon'>About</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Research</a>
+                                    <Link to='/comingsoon'>Contact Us</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Careers</a>
+                                    <Link to='/comingsoon'>Survey</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Help</a>
+                                    <Link to='/comingsoon'>Careers</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Advertise</a>
+                                    <Link to='/comingsoon'>Advertise</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Terms of use and Privacy</a>
+                                    <Link to='/comingsoon'>Terms of use and Privacy</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Ad Choice</a>
+                                    <Link to='/comingsoon'>Ad Choice</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Cookie Preferences</a>
+                                    <Link to='/comingsoon'>Cookie Preferences</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Blog</a>
+                                    <Link to='/comingsoon'>Blog</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Data Science</a>
+                                    <Link to='/comingsoon'>Data Science</Link>
                                 </li>
                                 <li>
-                                    <a href='/comingsoon'>Mobile Apps</a>
+                                    <Link to='/comingsoon'>Mobile Apps</Link>
                                 </li>
                             </ul>
                         </nav>
