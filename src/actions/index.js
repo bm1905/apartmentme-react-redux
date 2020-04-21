@@ -275,3 +275,19 @@ export const getReviews = (rentalId) => {
     .then(res => res.data)
     .catch(({ response }) => Promise.reject(response.data.errors))
 }
+
+// Contact Us Form
+
+export const createContact = (contactUsData) => {
+  return axiosInstance.post('/contactUs', contactUsData).then(
+    res => res.data,
+    err => Promise.reject(err.response.data.errors));
+}
+
+// Survey Form
+
+export const createSurvey = (surveyData) => {
+  return axiosInstance.post('/survey', surveyData).then(
+    res => res.data,
+    err => Promise.reject(err.response.data.errors));
+}

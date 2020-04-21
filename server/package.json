@@ -8,5 +8,8 @@
     "start": "node index.js"
   },
   "author": "Bijay Maharjan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.4.6"
+  }
 }

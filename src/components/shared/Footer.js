@@ -43,10 +43,10 @@ export function Footer() {
                                     <Link to='/comingsoon'>About</Link>
                                 </li>
                                 <li>
-                                    <Link to='/comingsoon'>Contact Us</Link>
+                                    <Link to='/contactUs'>Contact Us</Link>
                                 </li>
                                 <li>
-                                    <Link to='/comingsoon'>Survey</Link>
+                                    <Link to='/survey'>Survey</Link>
                                 </li>
                                 <li>
                                     <Link to='/comingsoon'>Careers</Link>

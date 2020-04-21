@@ -5,10 +5,16 @@ import { toUpperCase } from '../../helpers';
 
 class RentalSearchInput extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
+        const { searchedCity } = props;
 
         this.searchInput = React.createRef();
+
+        this.state = {
+            initialCity: searchedCity
+        }
     }
 
     handleKeyPress(event) {
@@ -36,15 +42,16 @@ class RentalSearchInput extends React.Component {
             // </div>
 
             <div className='form-inline my-2 my-lg-0' id="search-size">
-                <input onKeyPress={(event) => { this.handleKeyPress(event) }}
+                <input
+                    onKeyPress={(event) => { this.handleKeyPress(event) }}
+                    onChange={e => this.setState({ initialCity: e.target.value })}
                     ref={this.searchInput}
                     className='form-control mr-sm-2 bwm-search'
                     type='search'
                     placeholder='City name..'
-                    readonly
-                    // value='Shreveport'
-                    value={toUpperCase(this.props.searchedCity)}
-                    aria-label='Search'></input>
+                    value={toUpperCase(this.state.initialCity)}
+                    aria-label='Search'
+                />
                 <select className='form-control mr-sm-2 bwm-search'>
                     <option value="entire">Whole Apartment</option>
                     <option value="shared">Single Room</option>
