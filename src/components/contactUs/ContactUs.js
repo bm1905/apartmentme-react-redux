@@ -3,6 +3,7 @@ import ContactUsForm from './ContactUsForm';
 import * as actions from 'actions';
 import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Loader } from '../shared/Loader';
 
 export class ContactUs extends React.Component {
 
@@ -11,7 +12,8 @@ export class ContactUs extends React.Component {
 
         this.state = {
             errors: [],
-            redirect: false
+            redirect: false,
+            isFetching: false
         }
 
         this.createContactUs = this.createContactUs.bind(this);
@@ -19,19 +21,28 @@ export class ContactUs extends React.Component {
 
     createContactUs(contactData) {
         console.log(contactData);
+        this.setState({ isFetching: true });
         actions.createContact(contactData).then(
             (contact) => {
                 console.log(contact);
+                this.setState({ isFetching: false });
                 this.setState({ redirect: true });
                 toast.success('Thank you! Message Successfully Sent!')
             },
-            (errors) => {this.setState({ errors });
-            toast.error('Sorry!, Something went wrong!');
-        }
+            (errors) => {
+                this.setState({ errors });
+                toast.error('Sorry!, Something went wrong!');
+            }
         )
     }
 
     render() {
+
+        if (this.state.isFetching) {
+            return (
+                <Loader />
+            )
+        }
 
         if (this.state.redirect) {
 

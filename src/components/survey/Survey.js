@@ -3,6 +3,7 @@ import SurveyForm from './SurveyForm';
 import * as actions from 'actions';
 import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Loader } from '../shared/Loader';
 
 export class Survey extends React.Component {
 
@@ -11,7 +12,8 @@ export class Survey extends React.Component {
 
         this.state = {
             errors: [],
-            redirect: false
+            redirect: false,
+            isFetching: false
         }
 
         this.yesNoCategories = ['Select One', 'Yes', 'No', 'Maybe'];
@@ -23,9 +25,13 @@ export class Survey extends React.Component {
 
     createSurvey(surveyData) {
         console.log(surveyData);
+        this.setState({ isFetching: true });
+
+
         actions.createSurvey(surveyData).then(
             (survey) => {
                 console.log(survey);
+                this.setState({ isFetching: false });
                 this.setState({ redirect: true });
                 toast.success('Thank you! Survey Successfully Recorded!')
             },
@@ -38,14 +44,20 @@ export class Survey extends React.Component {
 
     render() {
 
+        if (this.state.isFetching) {
+            return (
+                <Loader />
+            )
+        }
+
         if (this.state.redirect) {
             return (
                 <React.Fragment>
                     <Redirect to={{ pathname: '/' }} />
-                </React.Fragment>)
+                </React.Fragment>
+            )
         }
         return (
-
             <section id='newSurvey'>
                 <div className='bwm-form'>
                     <div className='row'>
