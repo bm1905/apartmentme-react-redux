@@ -40,7 +40,7 @@ export function Footer() {
                         <nav className='links'>
                             <ul className='footerLinks'>
                                 <li>
-                                    <Link to='/comingsoon'>About</Link>
+                                    <Link to='/aboutUs'>About</Link>
                                 </li>
                                 <li>
                                     <Link to='/contactUs'>Contact Us</Link>

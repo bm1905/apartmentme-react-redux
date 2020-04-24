@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 // import '../styles/middleHomeSection.css';
+
+import * as actions from 'actions';
+
 import Slider from 'react-slick';
 import House1 from '../../styles/images/h1.jpg';
 import House2 from '../../styles/images/h2.jpg';
@@ -13,6 +17,20 @@ import House8 from '../../styles/images/h8.jpg';
 import House9 from '../../styles/images/h9.jpg';
 import House10 from '../../styles/images/h10.jpg';
 
+import AustinPic from '../../styles/images/austin.jpg';
+import ChicagoPic from '../../styles/images/chicago.jpg';
+import DenverPic from '../../styles/images/denver.jpg';
+import DallasPic from '../../styles/images/dallas.jpg';
+import LosAngelesPic from '../../styles/images/losangeles.jpg';
+import HoustonPic from '../../styles/images/houston.jpg';
+
+import CaliforniaCollegePic from '../../styles/images/californiaCollege.jpg';
+import FloridaCollegePic from '../../styles/images/floridaCollege.jpg';
+import IllinoisCollegePic from '../../styles/images/illinoisCollege.jpg';
+import MichiganCollegePic from '../../styles/images/michiganCollege.jpg';
+import NewYorkCollegePic from '../../styles/images/newYorkCollege.jpg';
+import TexasCollegePic from '../../styles/images/texasCollege.jpg';
+
 import { TemporaryTemplate } from './TemporaryTemplate';
 import { Template1 } from './templates/Template1';
 import { Template2 } from './templates/Template2';
@@ -22,7 +40,27 @@ import { Template5 } from './templates/Template5';
 import { Template6 } from './templates/Template6';
 import { RentalCard } from '../../components/rental/rental-listing/RentalCard';
 
-export class MiddleHomeSection extends React.Component {
+import { Austin } from './city/Austin';
+import { Chicago } from './city/Chicago';
+import { Houston } from './city/Houston';
+import { Dallas } from './city/Dallas';
+import { LosAngeles } from './city/LosAngeles';
+import { Denver } from './city/Denver';
+
+import { CaliforniaCollege } from './college/CaliforniaCollege';
+import { TexasCollege } from './college/TexasCollege';
+import { FloridaCollege } from './college/FloridaCollege';
+import { NewYorkCollege } from './college/NewYorkCollege';
+import { IllinoisCollege } from './college/IllinoisCollege';
+import { MichiganCollege } from './college/MichiganCollege';
+
+
+
+class MiddleHomeSection extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         var settings = {
@@ -67,6 +105,20 @@ export class MiddleHomeSection extends React.Component {
                 }]
         };
 
+        let dummyId;
+
+        var renderRentals = () => {
+            this.props.rentals.map((rental, index) => {
+                if (index === 0) {
+                    var test = rental._id;
+                    // console.log(test);
+                    // debugger;
+                    dummyId = test;
+                }
+            });
+        }
+        const rentalId = renderRentals();
+
         return (
             <div>
                 <div className='mainContainer'>
@@ -75,12 +127,25 @@ export class MiddleHomeSection extends React.Component {
                         <h3 className='homesAvailable'>Features homes in Shreveport</h3>
                     </div>
                     <Slider {...settings}>
-                        <div className='mainBlock'><img src={House1} className='houseList' alt='' />< Template1 /></div>
-                        <div className='mainBlock'><img src={House2} className='houseList' alt='' />< Template2 /></div>
-                        <div className='mainBlock'><img src={House3} className='houseList' alt='' />< Template3 /></div>
-                        <div className='mainBlock'><img src={House4} className='houseList' alt='' />< Template4 /></div>
-                        <div className='mainBlock'><img src={House5} className='houseList' alt='' />< Template5 /></div>
-                        <div className='mainBlock'><img src={House6} className='houseList' alt='' />< Template6 /></div>
+
+                        <Link to={`/rentals/${dummyId}`} >
+                            <div className='mainBlock'><img src={House1} className='houseList' alt='' />< Template1 /></div>
+                        </Link>
+                        <Link to={`/rentals/${dummyId}`} >
+                            <div className='mainBlock'><img src={House2} className='houseList' alt='' />< Template2 /></div>
+                        </Link>
+                        <Link to={`/rentals/${dummyId}`} >
+                            <div className='mainBlock'><img src={House3} className='houseList' alt='' />< Template3 /></div>
+                        </Link>
+                        <Link to={`/rentals/${dummyId}`} >
+                            <div className='mainBlock'><img src={House4} className='houseList' alt='' />< Template4 /></div>
+                        </Link>
+                        <Link to={`/rentals/${dummyId}`} >
+                            <div className='mainBlock'><img src={House5} className='houseList' alt='' />< Template5 /></div>
+                        </Link>
+                        <Link to={`/rentals/${dummyId}`} >
+                            <div className='mainBlock'><img src={House6} className='houseList' alt='' />< Template6 /></div>
+                        </Link>
                     </Slider>
 
                     <div className='seeMoreContainer'>
@@ -91,59 +156,72 @@ export class MiddleHomeSection extends React.Component {
                 <hr className='line'></hr>
                 <div className='mainContainer'>
                     <div className='textTitle'>
-                        <h2 className='text'>Most affordable</h2>
-                        <h3 className='highestPriced'>The most affordable homes in Shreveport</h3>
+                        <h2 className='text'>Apartments in all states</h2>
+                        <h3 className='highestPriced'>Browse apartments by city in all 50 states</h3>
                     </div>
                     <Slider {...settings} className='hi'>
-                        <div className='mainBlock'><img src={House7} className='houseList' alt='' />< Template6 /></div>
-                        <div className='mainBlock'><img src={House8} className='houseList' alt='' />< Template5 /></div>
-                        <div className='mainBlock'><img src={House9} className='houseList' alt='' />< Template3 /></div>
-                        <div className='mainBlock'><img src={House10} className='houseList' alt='' />< Template4 /></div>
-                        <div className='mainBlock'><img src={House1} className='houseList' alt='' />< Template2 /></div>
-                        <div className='mainBlock'><img src={House2} className='houseList' alt='' />< Template1 /></div>
+                        <Link to={`/rentals/Austin/homes`} >
+                            <div className='mainBlock'><img src={AustinPic} className='houseList' alt='' /><Austin /></div>
+                        </Link>
+                        <Link to={`/rentals/Chicago/homes`} >
+                            <div className='mainBlock'><img src={ChicagoPic} className='houseList' alt='' />< Chicago /></div>
+                        </Link>
+                        <Link to={`/rentals/Houston/homes`} >
+                            <div className='mainBlock'><img src={HoustonPic} className='houseList' alt='' /> <Houston /> </div>
+                        </Link>
+                        <Link to={`/rentals/Dallas/homes`} >
+                            <div className='mainBlock'><img src={DallasPic} className='houseList' alt='' /> <Dallas /> </div>
+                        </Link>
+                        <Link to={`/rentals/Denver/homes`} >
+                            <div className='mainBlock'><img src={DenverPic} className='houseList' alt='' />< Denver /></div>
+                        </Link>
+                        <Link to={`/rentals/Los%20Angeles/homes`} >
+                            <div className='mainBlock'><img src={LosAngelesPic} className='houseList' alt='' />< LosAngeles /></div>
+                        </Link>
                     </Slider>
                     <div className='seeMoreContainer'>
-                        <Link to='/rentals/Shreveport/homes'><button className='seeMoreListing'>See more listings</button></Link>
+                        <Link to='/comingsoon'><button className='seeMoreListing'>Check all 50 states</button></Link>
                     </div>
                 </div>
                 <hr className='line'></hr>
                 <div className='mainContainer'>
                     <div className='textTitle'>
-                        <h2 className='text'>Safe Area</h2>
-                        <h3 className='mostSquareFootage'>Shreveport homes located at lowest crime rates area</h3>
+                        <h2 className='text'>Apartments near College/University</h2>
+                        <h3 className='mostSquareFootage'>Browse all off-campus apartments near top colleges across 50 states</h3>
                     </div>
                     <Slider {...settings}>
-                        <div className='mainBlock'><img src={House6} className='houseList' alt='' />< Template2 /></div>
-                        <div className='mainBlock'><img src={House4} className='houseList' alt='' />< Template4 /></div>
-                        <div className='mainBlock'><img src={House5} className='houseList' alt='' />< Template3 /></div>
-                        <div className='mainBlock'><img src={House3} className='houseList' alt='' />< Template4 /></div>
-                        <div className='mainBlock'><img src={House2} className='houseList' alt='' />< Template6 /></div>
-                        <div className='mainBlock'><img src={House1} className='houseList' alt='' />< Template5 /></div>
+                        <Link to={`/comingsoon`} >
+                            <div className='mainBlock'><img src={CaliforniaCollegePic} className='houseList' alt='' />< CaliforniaCollege /></div>
+                        </Link>
+                        <Link to={`/comingsoon`} >
+                            <div className='mainBlock'><img src={TexasCollegePic} className='houseList' alt='' />< TexasCollege /></div>
+                        </Link>
+                        <Link to={`/comingsoon`} >
+                            <div className='mainBlock'><img src={FloridaCollegePic} className='houseList' alt='' />< FloridaCollege /></div>
+                        </Link>
+                        <Link to={`/comingsoon`} >
+                            <div className='mainBlock'><img src={NewYorkCollegePic} className='houseList' alt='' />< NewYorkCollege /></div>
+                        </Link>
+                        <Link to={`/comingsoon`} >
+                            <div className='mainBlock'><img src={IllinoisCollegePic} className='houseList' alt='' />< IllinoisCollege /></div>
+                        </Link>
+                        <Link to={`/comingsoon`} >
+                            <div className='mainBlock'><img src={MichiganCollegePic} className='houseList' alt='' />< MichiganCollege /></div>
+                        </Link>
                     </Slider>
                     <div className='seeMoreContainer'>
-                        <Link to='/rentals/Shreveport/homes'><button className='seeMoreListing'>See more listings</button></Link>
-                    </div>
-                </div>
-                <hr className='line'></hr>
-                <div className='mainContainer'>
-                    <div className='textTitle'>
-                        <h2 className='text'>New Listings</h2>
-                        <h3 className='mostRecent'>Newly listed homes in Shreveport</h3>
-                    </div>
-                    <Slider {...settings}>
-                        <div className='mainBlock'><img src={House1} className='houseList' alt='' />< Template1 /></div>
-                        <div className='mainBlock'><img src={House2} className='houseList' alt='' />< Template6 /></div>
-                        <div className='mainBlock'><img src={House4} className='houseList' alt='' />< Template3 /></div>
-                        <div className='mainBlock'><img src={House3} className='houseList' alt='' />< Template2 /></div>
-                        <div className='mainBlock'><img src={House5} className='houseList' alt='' />< Template5 /></div>
-                        <div className='mainBlock'><img src={House6} className='houseList' alt='' />< Template4 /></div>
-                    </Slider>
-                    <div className='seeMoreContainer'>
-                        <Link to='/rentals/Shreveport/homes'><button className='seeMoreListing'>See more listings</button></Link>
+                        <Link to='/comingsoon'><button className='seeMoreListing'>See more colleges</button></Link>
                     </div>
                 </div>
             </div>
         )
     }
-
 }
+
+function mapStateToProps(state) {
+    return {
+        rentals: state.rentals.data
+    }
+}
+
+export default connect(mapStateToProps)(MiddleHomeSection)

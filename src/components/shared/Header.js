@@ -54,9 +54,9 @@ class Header extends React.Component {
             <header className='mainHeader'>
                 <nav className='navbar navbar-dark navbar-expand-lg'>
                     <div className='container'>
-                        <img src={process.env.PUBLIC_URL + '/img/apartmentme-logo.png'} className='mainLogo' alt='' />
+
                         {/* <img className='displayImg' src={process.env.PUBLIC_URL + '/img/apartmentme-logo.png'} alt=""/> */}
-                        <Link className='navbar-brand' to='/'>ApartmentMe</Link>
+                        <Link className='navbar-brand' to='/'><img src={process.env.PUBLIC_URL + '/img/apartmentme-logo.png'} className='mainLogo' alt='' />ApartmentMe</Link>
 
                         {/* <RentalSearchInput /> */}
                         {/* <form className='form-inline my-2 my-lg-0'>

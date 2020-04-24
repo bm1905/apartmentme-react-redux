@@ -53,9 +53,17 @@ class RentalSearchInput extends React.Component {
                     aria-label='Search'
                 />
                 <select className='form-control mr-sm-2 bwm-search'>
-                    <option value="entire">Whole Apartment</option>
+                    <option value="entire">Apartment</option>
                     <option value="shared">Single Room</option>
-                    <option selected value="both">All Available</option>
+                    <option value="entire">House</option>
+                    <option selected value="both">Category</option>
+                </select>
+                <select className='form-control mr-sm-2 bwm-search'>
+                    <p>Hi</p>
+                    <option value="entire">Schools</option>
+                    <option value="shared">Markets</option>
+                    <option value="entire">Entertainment</option>
+                    <option selected value="both">Nearby Places</option>
                 </select>
                 <button onClick={() => { this.handleSearch() }}
                     className='btn btn-outline-success my-2 my-sm-0 btn-bwm-search'

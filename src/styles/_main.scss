@@ -21,6 +21,7 @@
 @import "home/homepage.scss";
 @import "comingsoon/comingsoon.scss";
 @import "loading/loading.scss";
+@import "aboutus/about-us.scss";
 
 .clickable {
     &:hover {
@@ -53,8 +54,8 @@
     background-color: $main-color;
     border-color: $main-color;
     color: $main-white-color;
-    padding: 15px 30px;
-    font-size: 20px;
+    // padding: 15px 30px;
+    // font-size: 20px;
 
     &:hover,
     &:focus,

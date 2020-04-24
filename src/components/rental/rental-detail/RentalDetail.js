@@ -177,6 +177,22 @@ class RentalDetail extends React.Component {
 
                         <div className="container collap">
                             <div className="row">
+
+                                <div className='col-md-8'>
+                                    <hr></hr>
+                                    <RentalMap location={`${rental.city}, ${rental.street}`} />
+                                </div>
+                                <div className='col-md-4'>
+                                    <hr></hr>
+                                    <div className='container btn-map-group'>
+                                        <button className='btn btn-bwm btn-map'>Default Map</button>
+                                        <button className='btn btn-bwm btn-map'>Crime Map</button>
+                                        <button className='btn btn-bwm btn-map'>Education</button>
+                                        <button className='btn btn-bwm btn-map'>Entertainment</button>
+                                        <button className='btn btn-bwm btn-map'>Market</button>
+                                    </div>
+
+                                </div>
                                 <div className="col-md-12">
                                     <hr></hr>
                                     <Collapsible trigger="Details">
@@ -190,11 +206,11 @@ class RentalDetail extends React.Component {
                                     </Collapsible>
                                     <hr></hr>
                                     <Collapsible trigger="Neighborhood">
-                                        <p>To be filled</p>
+                                        <p>To be filled automatically depending on address when users post their rentals.</p>
                                     </Collapsible>
                                     <hr></hr>
                                     <Collapsible trigger="Nearby Schools">
-                                        <p>To be filled</p>
+                                        <p>To be filled automatically depending on address when users post their rentals.</p>
                                     </Collapsible>
                                     <hr />
                                     <Collapsible trigger="Reviews">
@@ -297,10 +313,6 @@ class RentalDetail extends React.Component {
                         </div> */}
                         {/* < ReviewModal rentalId={rental._id} /> */}
 
-                    </div>
-                    <div className='col-md-12'>
-                        <hr></hr>
-                        <RentalMap location={`${rental.city}, ${rental.street}`} />
                     </div>
                 </section>
 
