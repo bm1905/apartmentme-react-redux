@@ -72,12 +72,12 @@ export const AboutUs = () => {
                         <li className="col-12 col-md-6 col-lg-4">
                             <div className="cnt-block equal-hight" style={{ height: "349px" }}>
                                 <figure> <img src={process.env.PUBLIC_URL + '/img/bm.png'} className="img-responsive" alt="" /></figure>
-                                <h3><a href="#">Bijay Maharjan</a></h3>
+                                <h3><a href="">Bijay Maharjan</a></h3>
                                 <p>Full-Stack Web Developer</p>
                                 <ul className="follow-us clearfix">
-                                    <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="http://www.bmaharjan.com/" target='_blank' rel='noopener noreferrer'><i className="fa fa-globe" aria-hidden="true"></i></a></li>
+                                    <li><a href="mailTo:bijay.maharjan5@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/bijay-maharjan" target='_blank' rel='noopener noreferrer'><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -85,11 +85,11 @@ export const AboutUs = () => {
                             <div className="cnt-block equal-hight" style={{ height: "349px" }}>
                                 <figure><img src={process.env.PUBLIC_URL + '/img/luji.png'} className="img-responsive" alt="" /></figure>
                                 <h3><a href="#">Lujien Sallam </a></h3>
-                                <p>Full-Stack Web Developer</p>
+                                <p>Developer/Buisness Analyst</p>
                                 <ul className="follow-us clearfix">
-                                    <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    {/* <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li> */}
+                                    <li><a href="mailTo:lujienosamafarag@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/lujien-sallam/" target='_blank' rel='noopener noreferrer'><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -97,11 +97,11 @@ export const AboutUs = () => {
                             <div className="cnt-block equal-hight" style={{ height: "349px" }}>
                                 <figure><img src={process.env.PUBLIC_URL + '/img/kenisha.png'} className="img-responsive" alt="" /></figure>
                                 <h3><a href="#">Kenisha Lewis </a></h3>
-                                <p>Full-Stack Web Developer</p>
+                                <p>Developer/Financial Application Analyst</p>
                                 <ul className="follow-us clearfix">
-                                    <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    {/* <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li> */}
+                                    <li><a href="mailTo:babynishaloves@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/kenisha-lewis-992170116/" target='_blank' rel='noopener noreferrer'><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                         </li>

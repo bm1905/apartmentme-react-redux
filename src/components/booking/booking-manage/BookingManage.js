@@ -20,13 +20,13 @@ class BookingManage extends React.Component {
 
         return (
             <section id='userBookings'>
-                <h1 className='page-title'>Bookings</h1>
+                <h1 className='page-title'>Rooms you rented</h1>
                 <div className='row'>
                     { this.renderBookings(bookings) }
                 </div>
                 { !isFetching && bookings.length === 0 &&
                     <div className='alert alert-warning'>
-                        You have not rented any rooms yet! You can search and create one from rental listings at required area. <br></br>
+                        You have not rented any rooms yet! If you find a suitable room, book it and it will appear here. <br></br>
                         <Link style={{'marginLeft': '10px'}} className='btn btn-bwm' to='/'>Search Listings</Link>
                     </div>
                 }

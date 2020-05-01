@@ -39,9 +39,9 @@ class Header extends React.Component {
                         Manage Portal
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <Link className="dropdown-item" to="/rentals/new">Create Rental</Link>
-                        <Link className="dropdown-item" to="/rentals/manage">Manage Rentals</Link>
-                        <Link className="dropdown-item" to="/bookings/manage">Your Rentals</Link>
+                        <Link className="dropdown-item" to="/rentals/new">Post Listings</Link>
+                        <Link className="dropdown-item" to="/rentals/manage">Manage Listings</Link>
+                        <Link className="dropdown-item" to="/bookings/manage">Are you moving?</Link>
                     </div>
                 </div>
             )
