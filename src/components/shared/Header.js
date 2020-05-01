@@ -41,7 +41,7 @@ class Header extends React.Component {
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <Link className="dropdown-item" to="/rentals/new">Post Listings</Link>
                         <Link className="dropdown-item" to="/rentals/manage">Manage Listings</Link>
-                        <Link className="dropdown-item" to="/bookings/manage">Are you moving?</Link>
+                        <Link className="dropdown-item" to="/bookings/manage">Your reserved rooms</Link>
                     </div>
                 </div>
             )

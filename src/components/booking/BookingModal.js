@@ -7,7 +7,7 @@ export function BookingModal(props) {
 
     return (
         <Modal open={open} onClose={closeModal} little classNames={{ modal: 'booking-modal' }}>
-            <h4 className='modal-title title'>Confirm Booking </h4>
+            <h4 className='modal-title title'>Confirm Reservation </h4>
             <hr></hr>
             <p className='dates'><em>{booking.startAt}</em> to <em>{booking.endAt}</em></p>
             <hr></hr>
@@ -18,7 +18,7 @@ export function BookingModal(props) {
                 <hr></hr>
                 <p>Total Price: <em>${booking.totalPrice} </em></p>
                 <hr></hr>
-                <p>Do you want to confirm your booking?</p>
+                <p>Do you want to confirm your reservation?</p>
             </div>
             <ResError errors={errors} />
             <div className='modal-footer'>

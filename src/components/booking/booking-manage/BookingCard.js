@@ -21,10 +21,10 @@ export function BookingCard(props) {
                             </div>
                             }
                         <p className='card-text booking-days'><em>{pretifyDate(booking.startAt)} - {pretifyDate(booking.endAt)} <strong>|</strong> {booking.days} days</em></p>
-                        <p className='card-text booking-price'><span>Price: </span> <span className='booking-price-value'>${booking.totalPrice}</span></p>
+                        <p className='card-text booking-price'><span>Estimated Price: </span> <span className='booking-price-value'>${booking.totalPrice}</span></p>
                         <hr></hr>
                         { booking.rental &&
-                            <Link className='btn btn-bwm' to={`/rentals/${booking.rental._id}`}>View details</Link>
+                            <Link className='btn btn-bwm' to={`/rentals/${booking.rental._id}`}>View Room details</Link>
                         }
                         </div>
                         <div className='card-footer text-muted'>

@@ -63,7 +63,7 @@ export class RentalManage extends React.Component {
                     { !isFetching && userRentals.length === 0 &&
                     <div className='alert alert-warning'>
                         No any listings yet! If you want to list your property, please post the listings here..<br></br>
-                        <Link style={{'marginLeft': '10px'}} className='btn btn-bwm' to='/rentals/new'>Add for Rental</Link>
+                        <Link style={{'marginLeft': '10px'}} className='btn btn-bwm' to='/rentals/new'>Add for Listing</Link>
                     </div>
                     }
                 </section>
