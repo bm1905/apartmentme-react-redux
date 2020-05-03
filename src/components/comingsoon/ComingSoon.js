@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export class ComingSoon extends React.Component {
 
   calculateTime() {
-    var countDownDate = new Date("April 29, 2020 15:37:25").getTime();
+    var countDownDate = new Date("July 29, 2020 15:37:25").getTime();
 
     // Update the count down every second.
     var countdownfunction = setInterval(function () {
@@ -45,7 +45,7 @@ export class ComingSoon extends React.Component {
           <hr></hr>
           <h3 className="testTime">Estimated completion by:</h3>
           {/* {this.calculateTime()} */}
-          <p id="result">April 29, 2020</p>
+          <p id="result">July 29, 2020</p>
         </div>
         <div className="bottom">
           {/* <a href="/"><button className='btn btn-success'> Go to home page </button></a> */}

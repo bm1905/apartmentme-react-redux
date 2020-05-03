@@ -17,7 +17,7 @@ import House8 from '../../styles/images/h8.jpg';
 import House9 from '../../styles/images/h9.jpg';
 import House10 from '../../styles/images/h10.jpg';
 
-import AustinPic from '../../styles/images/austin.jpg';
+import ShreveportPic from '../../styles/images/shreveport.jpg';
 import ChicagoPic from '../../styles/images/chicago.jpg';
 import DenverPic from '../../styles/images/denver.jpg';
 import DallasPic from '../../styles/images/dallas.jpg';
@@ -40,7 +40,7 @@ import { Template5 } from './templates/Template5';
 import { Template6 } from './templates/Template6';
 import { RentalCard } from '../../components/rental/rental-listing/RentalCard';
 
-import { Austin } from './city/Austin';
+import { Shreveport } from './city/Shreveport';
 import { Chicago } from './city/Chicago';
 import { Houston } from './city/Houston';
 import { Dallas } from './city/Dallas';
@@ -160,8 +160,8 @@ class MiddleHomeSection extends React.Component {
                         <h3 className='highestPriced'>Browse apartments by city in all 50 states</h3>
                     </div>
                     <Slider {...settings} className='hi'>
-                        <Link to={`/rentals/Austin/homes`} >
-                            <div className='mainBlock'><img src={AustinPic} className='houseList' alt='' /><Austin /></div>
+                        <Link to={`/rentals/Shreveport/homes`} >
+                            <div className='mainBlock'><img src={ShreveportPic} className='houseList' alt='' /><Shreveport /></div>
                         </Link>
                         <Link to={`/rentals/Chicago/homes`} >
                             <div className='mainBlock'><img src={ChicagoPic} className='houseList' alt='' />< Chicago /></div>
@@ -190,7 +190,7 @@ class MiddleHomeSection extends React.Component {
                         <h3 className='mostSquareFootage'>Browse all off-campus apartments near top colleges across 50 states</h3>
                     </div>
                     <Slider {...settings}>
-                        <Link to={`/comingsoon`} >
+                        <Link to={`/college-lists`} >
                             <div className='mainBlock'><img src={CaliforniaCollegePic} className='houseList' alt='' />< CaliforniaCollege /></div>
                         </Link>
                         <Link to={`/comingsoon`} >

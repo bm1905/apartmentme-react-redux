@@ -17,6 +17,7 @@ import { AboutUs } from './components/shared/aboutUs/AboutUs';
 import { Survey } from 'components/survey/Survey';
 import HomePage from 'components/home/HomePage';
 import { ComingSoon } from 'components/comingsoon/ComingSoon';
+import { CaliforniaCollegeList } from './components/home/college/collegeList/CaliforniaCollegeList';
 import Login from 'components/login/Login';
 import { Register } from 'components/register/Register';
 import { RentalManage } from 'components/rental/rental-manage/RentalManage';
@@ -71,6 +72,7 @@ class App extends Component {
                 <Route exact path='/login' component={Login} />
                 <LoggedInRoute exact path='/register' component={Register} />
                 <Route exact path='/comingsoon' component={ComingSoon} />
+                <Route exact path='/college-lists' component={CaliforniaCollegeList} />
               </Switch>
             </div>
             <InfoFooter />

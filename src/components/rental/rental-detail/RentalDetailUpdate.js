@@ -188,8 +188,8 @@ export class RentalDetailUpdate extends React.Component{
                     </div>
                 </div>
 
-                <hr></hr>
-                <Collapsible trigger="Details">
+                {/* <hr></hr> */}
+                {/* <Collapsible trigger="Details">
                 <EditableText entity={rental} 
                             entityField={'description'} 
                             className={'rental-description'}
@@ -197,9 +197,6 @@ export class RentalDetailUpdate extends React.Component{
                             rows={6}
                             cols={33}
                             errors={errors}/>
-                    {/* <p className='rental-description'>
-                        {rental.description}
-                    </p> */}
                 </Collapsible>
                 <hr></hr>
                 <Collapsible trigger="Assets">
@@ -212,7 +209,7 @@ export class RentalDetailUpdate extends React.Component{
                 <hr></hr>
                 <Collapsible trigger="Nearby Schools">
                     <p>To be filled</p>
-                </Collapsible>
+                </Collapsible> */}
             </div>
         </div>
     )
