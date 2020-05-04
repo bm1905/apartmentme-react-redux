@@ -215,7 +215,7 @@ class RentalDetail extends React.Component {
                                     <hr />
                                     <Collapsible trigger="Reviews">
                                         {!isAuth &&
-                                            <p>Please login to view or write reviews!</p>
+                                            <p>Please login to write reviews!</p>
                                         }
                                         {reviews && reviews.length > 0 &&
                                             <div className="row">
